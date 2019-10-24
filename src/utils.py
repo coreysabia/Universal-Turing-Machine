@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from config.settings import Settings
 
-def list_to_string(to_stringify):
-    # Join lists into a string
+def stringify(to_stringify):
+    # Concatenate lists into string
     return
 
 def pipeify(string):
