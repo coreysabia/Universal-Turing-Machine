@@ -2,8 +2,13 @@
 
 ## Local Development
 
+### If you do not already have a python enviroment installed, start here.
+1. Start by installing `Python 3.7`
+2. Run `
+
 1. Start by building pipenv files off of `requirements.txt` by running `pipenv update`.
 2. 
+
 
 ### Meet the Team
 <div>
