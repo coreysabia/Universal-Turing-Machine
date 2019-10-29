@@ -3,10 +3,8 @@
 # Set the length of the tape 
 # that is visable to the user
 DISPLAY_TAPE_LENGTH = 20
-
 # Set the allowed tape movements
 TAPE_MOVEMENTS = {'right': 1, 'left': -1}
-
 # For returning an empty character 
 EMPTY_CHARACTER = ' '
 
