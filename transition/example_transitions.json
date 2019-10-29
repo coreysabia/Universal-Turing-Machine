@@ -1,0 +1,14 @@
+{
+    "q0": {
+        "a": {
+          "write": "b",
+          "move": "left",
+          "nextState": "q1"
+        },
+        " ": {
+          "write": " ",
+          "move": "right",
+          "nextState": "q1"
+        }
+    }
+}
