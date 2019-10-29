@@ -4,8 +4,12 @@
 
 ### If you do not already have a python enviroment installed, start here.
 1. Start by installing `Python 3.7`
-2. Run `
+2. Make sure Python is in your PATH (if on windows)
+3. Update pip by running `python -m pip install --upgrade pip`.
+4. Install pipenv by running `pip install pipenv`
+5. Then follow list below.
 
+### To build the local pipenv, start here.
 1. Start by building pipenv files off of `requirements.txt` by running `pipenv update`.
 2. 
 

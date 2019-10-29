@@ -5,10 +5,15 @@
           "move": "left",
           "nextState": "q1"
         },
-        " ": {
-          "write": " ",
+        "b": {
+          "write": "b",
           "move": "right",
-          "nextState": "q1"
+          "nextState": "q2"
+        },
+        "c": {
+          "write": "c",
+          "move": "right",
+          "nextState": "q3"
         }
     }
 }
