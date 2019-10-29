@@ -8,6 +8,8 @@ DISPLAY_TAPE_LENGTH = 20
 TAPE_MOVEMENTS = {'right': 1, 'left': -1}
 
 # For returning an empty character 
+# when needed, maybe we should move 
+# this to utils.py, not sure yet
 EMPTY_CHARACTER = ' '
 
 def tape_movements():
@@ -26,7 +28,7 @@ def stringify(list):
     # Concatenate lists into string
     return str.join('', list)
 
-def pipeify(string): #ignore for now
+def pipeify(string):
     return
 
 def next_position(index, direction):
@@ -49,3 +51,24 @@ def check_list_length(list): #skips over empty space without cleaning
     for i in clean:
          count += 1
     return count
+
+a = ["a","b","c","d"]
+b = ["a","b","","c"]
+c = 0
+
+string = stringify(a)
+print("Stringify test:")
+print(string)
+print("\n")
+
+print("clean test:")
+print(clean_list(b))
+print("\n")
+
+print("checklist length test:")
+print(check_list_length(b))
+print("\n")
+
+print("next position:")
+print(next_position(c, "right"))
+print("\n")
