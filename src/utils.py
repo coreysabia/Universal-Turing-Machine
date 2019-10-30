@@ -20,6 +20,11 @@ def empty_char():
 def display_tape_length():
     return DISPLAY_TAPE_LENGTH
 
+def print_system_clear():
+    #print cli clear (as if you type cls or clear depending on os)
+    os.system('clear')
+
+
 def stringify(list):
     # Concatenate lists into string
     return str.join('', list)
@@ -27,9 +32,9 @@ def stringify(list):
 def pipeify(string): #ignore for now
     return
 
-def next_position(index, direction):
-    next_index = index + get_next_direction(direction)
-    return next_index
+def next_position(position, direction):
+    next_position = position + get_next_direction(direction)
+    return next_position
 
 def clean_list(list):
     # Remove empty characters from a list which 

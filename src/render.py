@@ -1,12 +1,12 @@
+from src.utils import stringify, clean_list, pipeify, check_list_length
 
-
-class Render(oject)
+class Render(object):
 
     def render(self, position, steps_counter, force_render=False):
         if self.should_render(force_render):
             empty, padding_end, padding_start, visible_length, visible_tape_section = self.tape_format_calc(index)
-            self.print_system_clear()
-            self.print_statistics(index, steps_counter)
+            print_system_clear()
+            print_statistics(index, steps_counter)
             self.print_render_mode_information()
             self.print_tape(empty, padding_end, padding_start, visible_length, visible_tape_section)
             self.print_sign_occurrences()
@@ -18,10 +18,6 @@ class Render(oject)
     def should_render(self, force_render):
         return self.activate_render or self.activate_interactive or force_render
 
-    def print_system_clear(self):
-        os.system('clear')
-    
-
     def tape_format_calc(self, index):
         length = len(self.tape)
         visible_length = Config.visible_tape_length()
@@ -30,13 +26,12 @@ class Render(oject)
         padding_end = visible_length - (length - (index + 1))
         dynamic_start = index - visible_length if index >= visible_length else 0
         dynamic_end = length - (length - index - visible_length) if length - index > visible_length else length
-        visible_tape_section = list_to_string(self.tape)[dynamic_start:dynamic_end]
+        visible_tape_section = stringify(self.tape)[dynamic_start:dynamic_end]
         return empty, padding_end, padding_start, visible_length, visible_tape_section
-
 
     def print_sign_occurrences(self):
         print('Character Counter')
-        for character, occurrence in count_occurrences(self.tape).items():
+        for character, occurrence in check_list_length(self.tape).items():
             print('{}x: {}'.format(occurrence, character))
 
     def print_tape(self, empty, padding_end, padding_start, visible_length, visible_tape_section):
