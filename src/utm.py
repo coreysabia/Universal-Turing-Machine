@@ -50,9 +50,9 @@ class TuringMachine(object):
         # set an object (action) to json object from transitions 
         action = self.transitions[self.current_state][self.tape[position]]
         print(action)
-        self.tape[position] = action['write']
+        self.tape[position] = action['writeValue']
         self.current_state = action['nextState']
-        position = next_position(position, action['move'])
+        position = next_position(position, action['moveTo'])
 
         return position
 
@@ -61,10 +61,10 @@ class TuringMachine(object):
         for transition in transitions:
             for case in transitions[transition]:
                 action = transitions[transition][case]
-                if len(action['write']) != 1:
-                    raise Exception('Invalid config! Use ONE character, instead of "{}"!'.format(action['write']))
-                if action['move'] not in tape_movements():
-                    raise Exception('Invalid config! Use "right" or "left", not "{}"!'.format(action['move']))
+                if len(action['writeValue']) != 1:
+                    raise Exception('Invalid config! Use ONE character, instead of "{}"!'.format(action['writeValue']))
+                if action['moveTo'] not in tape_movements():
+                    raise Exception('Invalid config! Use "right" or "left", not "{}"!'.format(action['moveTo']))
                 if action['nextState'] not in transitions and action['nextState'] != end_state:
                     raise Exception('Invalid config! State "{}" needs to be defined!'.format(action['nextState']))
 

@@ -39,8 +39,8 @@ def next_position(position, direction):
 def clean_list(list):
     # Remove empty characters from a list which 
     # might have empty characters and return it
-    while '' in list:
-        list.remove('')
+    while ' ' in list:
+        list.remove(' ')
     return list
 
 def check_list_length(list): #skips over empty space without cleaning

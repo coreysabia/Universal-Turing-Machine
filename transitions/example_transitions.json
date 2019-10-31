@@ -1,18 +1,18 @@
 {
     "q0": {
         "a": {
-          "write": "b",
-          "move": "left",
+          "writeValue": "b",
+          "moveTo": "left",
           "nextState": "q1"
         },
         "b": {
-          "write": "b",
-          "move": "right",
+          "writeValue": "b",
+          "moveTo": "right",
           "nextState": "q2"
         },
         "c": {
-          "write": "c",
-          "move": "right",
+          "writeValue": "c",
+          "moveTo": "right",
           "nextState": "q3"
         }
     }
