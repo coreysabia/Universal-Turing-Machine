@@ -11,12 +11,11 @@ def main():
         transitions = json.loads(open(args.transitions).read())
         result = TuringMachine(transitions,
                                args.input_tape,
-                               args.begining_state,
+                               args.start_state,
                                args.ending_state,
-                               args.render,
                                args.speed).run()
         print()
-        print('Input: {}'.format(args.tape))
+        print('Input: {}'.format(args.input_tape))
         print('Output: {}'.format(result))
     except Exception as e:
         print('Something went wrong! Issue: {}'.format(e))

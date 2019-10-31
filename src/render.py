@@ -1,58 +1,36 @@
-from src.utils import stringify, clean_list, pipeify, check_list_length
+from src.utils import *
+from src.utm import *
 
-class Render(object):
+#IGNORE THIS FILE FOR NOW PLEASE
 
-    def render(self, position, steps_counter, force_render=False):
-        if self.should_render(force_render):
-            empty, padding_end, padding_start, visible_length, visible_tape_section = self.tape_format_calc(index)
-            print_system_clear()
-            print_statistics(index, steps_counter)
-            self.print_render_mode_information()
-            self.print_tape(empty, padding_end, padding_start, visible_length, visible_tape_section)
-            self.print_sign_occurrences()
-            if self.activate_interactive:
-                input()
-            if self.speed:
-                time.sleep(self.speed)
+def render(self, position=None, step_number=None):
+    empty, padding_end, padding_start, visible_length, visible_tape_section = tape_format_calc(position)
+    print_system_clear()
+    print_statistics(position, step_number)
+    self.print_render_mode_information()
+    self.print_tape(empty, padding_end, padding_start, visible_length, visible_tape_section)
+    self.print_sign_occurrences()
+    if self.speed:
+        time.sleep(self.speed)
 
-    def should_render(self, force_render):
-        return self.activate_render or self.activate_interactive or force_render
+def tape_format_calc(self, position=None):
+    length = len(self.tape)
+    visible_length = Config.visible_tape_length()
+    empty = Config.empty_character()
+    padding_start = visible_length - position
+    padding_end = visible_length - (length - (position + 1))
+    dynamic_start = position - visible_length if position >= visible_length else 0
+    dynamic_end = length - (length - position - visible_length) if length - position > visible_length else length
+    visible_tape_section = stringify(self.tape)[dynamic_start:dynamic_end]
+    return empty, padding_end, padding_start, visible_length, visible_tape_section
 
-    def tape_format_calc(self, index):
-        length = len(self.tape)
-        visible_length = Config.visible_tape_length()
-        empty = Config.empty_character()
-        padding_start = visible_length - index
-        padding_end = visible_length - (length - (index + 1))
-        dynamic_start = index - visible_length if index >= visible_length else 0
-        dynamic_end = length - (length - index - visible_length) if length - index > visible_length else length
-        visible_tape_section = stringify(self.tape)[dynamic_start:dynamic_end]
-        return empty, padding_end, padding_start, visible_length, visible_tape_section
+def print_tape(self, empty, padding_end, padding_start, visible_length, visible_tape_section):
+    padding_icons = visible_length * 2 * '~'
+    print(padding_icons + '|' + padding_icons)
+    print(pipeify(padding_start * empty + visible_tape_section + padding_end * empty))
+    print(padding_icons + '|' + padding_icons)
 
-    def print_sign_occurrences(self):
-        print('Character Counter')
-        for character, occurrence in check_list_length(self.tape).items():
-            print('{}x: {}'.format(occurrence, character))
-
-    def print_tape(self, empty, padding_end, padding_start, visible_length, visible_tape_section):
-        padding_icons = visible_length * 2 * '='
-        print(padding_icons + '▼' + padding_icons)
-        print(pipeify(padding_start * empty + visible_tape_section + padding_end * empty))
-        print(padding_icons + '▲' + padding_icons)
-
-    def print_render_mode_information(self):
-        print('Render Mode')
-        text_for_automatic_mode = 'X' if self.activate_render and not self.activate_interactive else ' '
-        show_for_interactive_mode = ('X', '(Press enter to render next step...)')
-        text_for_interactive_mode = (show_for_interactive_mode if self.activate_interactive else (' ', ' '))
-        none_render_activated = not self.activate_interactive and not self.activate_render
-        show_for_none_mode = ('X', '(Please wait for results...)')
-        text_for_none_mode = (show_for_none_mode if none_render_activated else (' ', ' '))
-        print('[{}] Automatic'.format(text_for_automatic_mode))
-        print('[{}] Interactive {}'.format(text_for_interactive_mode[0], text_for_interactive_mode[1]))
-        print('[{}] None {}'.format(text_for_none_mode[0], text_for_none_mode[1]))
-
-    def print_statistics(self, index, steps_counter):
-        print('Steps Counter {}'.format(str(steps_counter).rjust(7)))
-        print('Current State {}'.format(self.state.rjust(7)))
-        print('Tape Index {} '.format(str(index).rjust(10)))
+def print_statistics(self, position, step_number):
+    print('Step number {}'.format(str(step_number).rjust(7)))
+    print('Current State {}'.format(self.state.rjust(7)))
+    print('Tape position {} '.format(str(position).rjust(10)))

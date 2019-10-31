@@ -44,6 +44,7 @@ def clean_list(list):
     return list
 
 def check_list_length(list): #skips over empty space without cleaning
+    #THIS needs to return the occurences of a specific character (for each character that is found)
     count = 0
     # Return the number of occurrences
     # in a list which has no empty characters
