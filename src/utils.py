@@ -37,8 +37,6 @@ def stringify(list):
 def tape_visualization(string):
     return '|'.join(string[i:i + 1] for i in range(0, len(string)))
 
-
-
 def next_position(position, direction):
     next_position = position + get_next_direction(direction)
     return next_position

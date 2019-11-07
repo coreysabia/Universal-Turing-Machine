@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-from src.render import *
-from src.utils import *
+from render import *
+from utils import *
 
 
 class TuringMachine(object):

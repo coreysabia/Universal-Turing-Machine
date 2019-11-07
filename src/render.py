@@ -1,5 +1,5 @@
-from src.utils import *
-from src.utm import *
+from utils import *
+from utm import *
 import os
 import time
 
@@ -7,7 +7,7 @@ import time
 
 def render(position, step_number, current_state, tape, speed, dis_length):
     # Clear screen to wipe previous state
-    print_system_clear()
+    
     # Initialize dynamic padding variables
     empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
     # Print step, postion, current state information

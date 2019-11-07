@@ -2,6 +2,13 @@
 from utils import *
 from render import *
 
+position = 2
+step_number= 3
+current_state = 'idk'
+tape = ["a","b","c","d"]
+speed = .03
+dis_length = 15
+
 a = ["a","b","c","d"]
 b = ["a","b","","c"]
 c = 0
@@ -29,20 +36,17 @@ print("*** next position:")
 print(next_position(c, "right"))
 print("\n")
 
-p = 2
-s = 3
-current_state = 'idk'
 print("*** stats test:")
-print(print_statistics(s, p, current_state))
+print(print_info(position, step_number, current_state))
 print("\n")
 
-empty, pad_end, pad_start, dis_length, visible_tape_section = tape_format_calc(p, b)
+empty, pad_end, pad_start, dis_length, visible_tape_section = dynamic_padding(position, tape, dis_length)
 print("*** tape test:")
 print(print_tape(empty, pad_end, pad_start, dis_length, visible_tape_section))
 print("\n")
 
 print("*** render test:")
-print(render(s, p, current_state, b))
+print(render(position, step_number, current_state, tape, speed, dis_length))
 print("\n")
 
 print("count_list_members test:")
@@ -50,6 +54,8 @@ print("the tested list:")
 print(f)
 print("[char_a, char_b, char_c, char_arrow, char_x, char_y, char_left_bracket, char_right_bracket, char_unknown]")
 print(count_list_members(f))
+print("\n")
+
 
 print("count_specific_member test:")
 #prints out the number of a specific charatcer in a list
