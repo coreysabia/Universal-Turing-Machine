@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+from PyInquirer import *
 import argparse
 from src.render import *
 from src.utils import *
@@ -67,7 +67,8 @@ class TuringMachine(object):
                 if action['nextState'] not in transitions and action['nextState'] != end_state:
                     raise Exception('Invalid config! State "{}" needs to be defined!'.format(action['nextState']))
 
-def argument_parser():
+
+def argument_parser(): #***matt will change***
     ap = argparse.ArgumentParser(description='A Universal Turing Machine for COMSC 330')
     ap.add_argument('-b', '--start_state', type=str, action='store', default='q0', help='Define the begining state, default is q0')
     ap.add_argument('-e', '--ending_state', type=str, action='store', default='qdone', help='Define the ending state, default is qdone')
@@ -76,4 +77,43 @@ def argument_parser():
     r_args = ap.add_argument_group('Required arguments')
     r_args.add_argument('-i', '--transitions', type=str, action='store', default=False, required=True, help='Define the path to the UTM Transitions, as a JSON file.')
     r_args.add_argument('-t', '--input_tape', type=str, action='store', default=False, required=True, help='Define the path to the input tape, as a txt file.')
+
     return ap.parse_args()
+
+def argument_parser_pyinquirer():
+    questions = [
+        {
+            'type' : 'input',
+            'name' : 'input_tape',
+            'message':'Enter the full path to the tape:'
+        },
+        {
+            'type' : 'input',
+            'name' : 'transactions',
+            'message':'Enter the full path to the transactions:'
+        },
+        {
+            'type': 'input',
+            'name': 'start_state',
+            'message': 'Enter the start state (default: q0):',
+            'default': 'q0'
+        },
+        {
+            'type' : 'input',
+            'name' : 'end_state',
+            'message':'Enter the final state (default: q0):',
+            'default': 'q2'
+        },
+        {
+            'type' : 'input',
+            'name' : 'speed',
+            'message':'Enter the desired speed of the Turing Machine:'
+        },
+        {
+            'type' : 'input',
+            'name' : 'rendered_tape_length',
+            'message':'Enter how much of the tape you would like to see:'
+        }
+    ] 
+    answers = prompt(questions)
+    return answers

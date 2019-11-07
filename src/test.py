@@ -2,6 +2,7 @@
 from utils import *
 from render import *
 
+
 position = 2
 step_number= 3
 current_state = 'idk'
@@ -43,12 +44,18 @@ print()
 print(next_position(c, "right"))
 print("\n")
 
+print("*** check_os test:")
+print()
+os_check()
+
 print("*** stats test:")
 print()
 print(print_info(position, step_number, current_state))
 print("\n")
 
-empty, pad_end, pad_start, dis_length, visible_tape_section = dynamic_padding(position, tape, dis_length)
+
+empty, pad_end, pad_start, dis_length, visible_tape_section = dynamic_padding(position, tape, dis_length) # its me
+
 print("*** tape test:")
 print()
 print(print_tape(empty, pad_end, pad_start, dis_length, visible_tape_section))
