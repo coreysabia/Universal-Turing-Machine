@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from utils import *
-from render import *
+from src.utils import *
+from src.render import *
 
 position = 2
 step_number= 3
