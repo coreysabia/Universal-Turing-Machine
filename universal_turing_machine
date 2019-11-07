@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
-from src.utm import argument_parser, TuringMachine
+from src.utm import argument_parser_pyinquirer, TuringMachine
 import json
 
 
 def main():
-    args = argument_parser()
+    requested_args = argument_parser_pyinquirer()
     try:
-        transitions = json.loads(open(args.transitions).read())
+        transitions = json.loads(open(requested_args['transitions']).read())
         turing_machine = TuringMachine(transitions,
-                               args.input_tape,
-                               args.start_state,
-                               args.ending_state,
-                               args.speed,
-                               args.rendered_tape_length).run()
+                               requested_args['input_tape'],
+                               requested_args['start_state'],
+                               requested_args['end_state'],
+                               requested_args['speed'],
+                               requested_args['rendered_tape_length']).run()
         print()
-        print('Input: {}'.format(args.input_tape))
+        print('Input: {}'.format(requested_args.input_tape))
         print('Output: {}'.format(turing_machine))
         print('The Turing Machine answered YES')
     except Exception as e:
