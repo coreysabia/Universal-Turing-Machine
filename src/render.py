@@ -53,5 +53,3 @@ def print_info(position, step_number, current_state):
     print('Step Number: {}'.format(str(step_number).rjust(12)))
     print('Current State: {}'.format(str(current_state).rjust(10)))
     print('Tape Position: {} '.format(str(position).rjust(10)))
-
-

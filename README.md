@@ -17,10 +17,13 @@
 ## Run the UTM
 
 ### Try running this to test the UTM:
-./universal_turing_machine --transitions transitions/example_multiplication.json \
-    --input_tape "00 000000000000000" \
-    --rendered_tape_length 30 \
-    --speed 0.01
+
+### unix
+./universal_turing_machine --transitions transitions/example_multiplication.json --input_tape "00 00" --rendered_tape_length 30 --speed 0.01
+
+### windows
+universal_turing_machine --transitions transitions/example_multiplication.json --input_tape "00 00" --rendered_tape_length 30 --speed 0.01
+
 
 ### Meet the Team
 <div>
