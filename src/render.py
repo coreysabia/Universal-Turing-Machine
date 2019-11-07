@@ -7,7 +7,7 @@ import time
 
 def render(position, step_number, current_state, tape, speed, dis_length):
     # Clear screen to wipe previous state
-    
+    print_system_clear()
     # Initialize dynamic padding variables
     empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
     # Print step, postion, current state information
@@ -19,6 +19,17 @@ def render(position, step_number, current_state, tape, speed, dis_length):
     # IF speed was passed in via argparse, set the speed of the rendering
     if speed:
         time.sleep(speed)
+
+def test_render(position, step_number, current_state, tape, speed, dis_length):
+    # TEST RENDER just print one output to test the render function
+    # Initialize dynamic padding variables
+    empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
+    # Print step, postion, current state information
+    print_info(position, step_number, current_state)
+    # Return for spacing
+    print()
+    # Print dynamic tape
+    print_tape(empty, pad_end, pad_start, dis_length, vis_tape)
 
 def dynamic_padding(position, tape, dis_length):
     # Get the length of the tape

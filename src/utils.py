@@ -29,7 +29,6 @@ def print_system_clear():
     #print cli clear (as if you type cls or clear depending on os)
     os.system('clear')
 
-
 def stringify(list):
     # Concatenate lists into string
     return str.join('', list)
