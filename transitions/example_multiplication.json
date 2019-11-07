@@ -1,0 +1,206 @@
+{
+  "q0": {
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q1"
+    },
+    "0": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q2"
+    }
+  },
+  "q1": {
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q14"
+    },
+    "0": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q2"
+    }
+  },
+  "q2": {
+    "0": {
+      "writeValue": "0",
+      "moveTo": "right",
+      "nextState": "q2"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q3"
+    }
+  },
+  "q3": {
+    "0": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q4"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "left",
+      "nextState": "q15"
+    }
+  },
+  "q4": {
+    "0": {
+      "writeValue": "0",
+      "moveTo": "right",
+      "nextState": "q4"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q5"
+    }
+  },
+  "q5": {
+    " ": {
+      "writeValue": "0",
+      "moveTo": "left",
+      "nextState": "q6"
+    },
+    "0": {
+      "writeValue": "0",
+      "moveTo": "right",
+      "nextState": "q5"
+    }
+  },
+  "q6": {
+    "0": {
+      "writeValue": "0",
+      "moveTo": "left",
+      "nextState": "q6"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "left",
+      "nextState": "q7"
+    }
+  },
+  "q7": {
+    "0": {
+      "writeValue": "0",
+      "moveTo": "left",
+      "nextState": "q8"
+    },
+    " ": {
+      "writeValue": "0",
+      "moveTo": "left",
+      "nextState": "q9"
+    }
+  },
+  "q8": {
+    "0": {
+      "writeValue": "0",
+      "moveTo": "left",
+      "nextState": "q8"
+    },
+    " ": {
+      "writeValue": "0",
+      "moveTo": "right",
+      "nextState": "q3"
+    }
+  },
+  "q9": {
+    "0": {
+      "writeValue": "0",
+      "moveTo": "left",
+      "nextState": "q9"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "left",
+      "nextState": "q10"
+    }
+  },
+  "q10": {
+    "0": {
+      "writeValue": "0",
+      "moveTo": "left",
+      "nextState": "q11"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q12"
+    }
+  },
+  "q11": {
+    "0": {
+      "writeValue": "0",
+      "moveTo": "left",
+      "nextState": "q11"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q0"
+    }
+  },
+  "q12": {
+    "0": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q13"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q12"
+    }
+  },
+  "q13": {
+    "0": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q13"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "qdone"
+    }
+  },
+  "q14": {
+    "0": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "q14"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "qdone"
+    }
+  },
+  "q15": {
+    "0": {
+      "writeValue": " ",
+      "moveTo": "left",
+      "nextState": "q15"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "left",
+      "nextState": "q16"
+    }
+  },
+  "q16": {
+    "0": {
+      "writeValue": " ",
+      "moveTo": "left",
+      "nextState": "q16"
+    },
+    " ": {
+      "writeValue": " ",
+      "moveTo": "right",
+      "nextState": "qdone"
+    }
+  }
+}

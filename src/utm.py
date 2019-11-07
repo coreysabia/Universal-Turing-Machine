@@ -67,6 +67,7 @@ class TuringMachine(object):
                 if action['nextState'] not in transitions and action['nextState'] != end_state:
                     raise Exception('Invalid config! State "{}" needs to be defined!'.format(action['nextState']))
 
+
 def argument_parser(): #***matt will change***
     ap = argparse.ArgumentParser(description='A Universal Turing Machine for COMSC 330')
     ap.add_argument('-b', '--start_state', type=str, action='store', default='q0', help='Define the begining state, default is q0')
@@ -76,6 +77,7 @@ def argument_parser(): #***matt will change***
     r_args = ap.add_argument_group('Required arguments')
     r_args.add_argument('-i', '--transitions', type=str, action='store', default=False, required=True, help='Define the path to the UTM Transitions, as a JSON file.')
     r_args.add_argument('-t', '--input_tape', type=str, action='store', default=False, required=True, help='Define the path to the input tape, as a txt file.')
+
     return ap.parse_args()
 
 def argument_parser_pyinquirer():

@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+# coding=utf-8
+
+from src.utm import argument_parser, TuringMachine
+import json
+
+
+def main():
+    args = argument_parser()
+    try:
+        transitions = json.loads(open(args.transitions).read())
+        turing_machine = TuringMachine(transitions,
+                               args.input_tape,
+                               args.start_state,
+                               args.ending_state,
+                               args.speed,
+                               args.rendered_tape_length).run()
+        print()
+        print('Input: {}'.format(args.input_tape))
+        print('Output: {}'.format(turing_machine))
+    except Exception as e:
+        print('Something went wrong! Issue: {}'.format(e))
+
+
+if __name__ == '__main__':
+    main()

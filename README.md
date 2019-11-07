@@ -1,7 +1,5 @@
 # Universal Turing Machine
 
-<<<<<<< Updated upstream
-=======
 ## Local Development
 
 ### If you do not already have a python enviroment installed, start here.
@@ -19,13 +17,14 @@
 ## Run the UTM
 
 ### Try running this to test the UTM:
+
 ### unix
 ./universal_turing_machine --transitions transitions/example_multiplication.json --input_tape "00 00" --rendered_tape_length 30 --speed 0.01
 
 ### windows
 universal_turing_machine --transitions transitions/example_multiplication.json --input_tape "00 00" --rendered_tape_length 30 --speed 0.01
 
->>>>>>> Stashed changes
+
 ### Meet the Team
 <div>
   <p align="center">
