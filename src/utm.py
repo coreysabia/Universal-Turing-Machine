@@ -9,7 +9,7 @@ from src.utils import *
 class TuringMachine(object):
 
 
-    def __init__(self, transitions, input_tape, start_state, ending_state, speed):
+    def __init__(self, transitions, input_tape, start_state, ending_state, speed, rendered_tape_length):
         #initialize variables
         self.transitions = transitions
         self.tape = list(input_tape)
@@ -19,20 +19,20 @@ class TuringMachine(object):
         self.end_state = ending_state
         self.step_number = 0
         self.position = 0
+        self.dis_length = int(rendered_tape_length)
         self.validate_transition(self.transitions, self.end_state)
 
     def run(self):
         
         #render_output
-        print(self.step_number)
-        #render(self.position, self.step_number)
+        render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
 
         #Add to step_number of steps and move position
         while self.current_state != self.end_state:
             self.step_number += 1
             self.position = self.next_state(self.position)
-            #render(self.position, self.step_number)
-        #render(self.position, self.step_number)
+            render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
+        render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
 
         #return the string version of the tape
         return stringify(clean_list(self.tape))
@@ -49,7 +49,6 @@ class TuringMachine(object):
 
         # set an object (action) to json object from transitions 
         action = self.transitions[self.current_state][self.tape[position]]
-        print(action)
         self.tape[position] = action['writeValue']
         self.current_state = action['nextState']
         position = next_position(position, action['moveTo'])
@@ -73,6 +72,7 @@ def argument_parser():
     ap.add_argument('-b', '--start_state', type=str, action='store', default='q0', help='Define the begining state, default is q0')
     ap.add_argument('-e', '--ending_state', type=str, action='store', default='qdone', help='Define the ending state, default is qdone')
     ap.add_argument('-s', '--speed', type=float, action='store', default=.3, help='Define the speed of the states as they are rendered in the CLI')
+    ap.add_argument('-l', '--rendered_tape_length', type=float, action='store', default=15, help='Define the rendered length of the tape')
     r_args = ap.add_argument_group('Required arguments')
     r_args.add_argument('-i', '--transitions', type=str, action='store', default=False, required=True, help='Define the path to the UTM Transitions, as a JSON file.')
     r_args.add_argument('-t', '--input_tape', type=str, action='store', default=False, required=True, help='Define the path to the input tape, as a txt file.')

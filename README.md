@@ -14,9 +14,8 @@
 2. 
 
 ./universal_turing_machine --transitions transitions/multiplication.json \
-    --begining_state q0 \
     --input_tape "00000000000000000" \
-    --render \
+    --rendered_tape_length 30 \
     --speed 0.01
 
 ### Meet the Team

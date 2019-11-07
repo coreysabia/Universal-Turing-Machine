@@ -1,12 +1,17 @@
 # -*- coding: utf-8 -*-
-
+import os
 # Set the length of the tape 
 # that is visable to the user
-DISPLAY_TAPE_LENGTH = 20
+DISPLAY_TAPE_LENGTH = 10
 # Set the allowed tape movements
 TAPE_MOVEMENTS = {'right': 1, 'left': -1}
 # For returning an empty character 
 EMPTY_CHARACTER = ' '
+
+SPEED = 0.1
+
+def get_speed():
+    return SPEED
 
 def tape_movements():
     return TAPE_MOVEMENTS.keys()
@@ -29,8 +34,10 @@ def stringify(list):
     # Concatenate lists into string
     return str.join('', list)
 
-def pipeify(string): #ignore for now
-    return
+def tape_visualization(string):
+    return '|'.join(string[i:i + 1] for i in range(0, len(string)))
+
+
 
 def next_position(position, direction):
     next_position = position + get_next_direction(direction)

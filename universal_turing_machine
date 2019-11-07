@@ -9,14 +9,15 @@ def main():
     args = argument_parser()
     try:
         transitions = json.loads(open(args.transitions).read())
-        result = TuringMachine(transitions,
+        turing_machine = TuringMachine(transitions,
                                args.input_tape,
                                args.start_state,
                                args.ending_state,
-                               args.speed).run()
+                               args.speed,
+                               args.rendered_tape_length).run()
         print()
         print('Input: {}'.format(args.input_tape))
-        print('Output: {}'.format(result))
+        print('Output: {}'.format(turing_machine))
     except Exception as e:
         print('Something went wrong! Issue: {}'.format(e))
 
