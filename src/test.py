@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+#from src.utils import *
+from src.utils import *
+#from src.render import *
 
 from utils import *
 
@@ -29,6 +32,28 @@ print("next position:")
 print(next_position(c, "right"))
 print("\n")
 
+<<<<<<< Updated upstream
+=======
+print("*** check_os test:")
+print()
+os_check()
+
+print("*** stats test:")
+print()
+print(print_info(position, step_number, current_state))
+print("\n")
+
+empty, pad_end, pad_start, dis_length, visible_tape_section = dynamic_padding(position, tape, dis_length) #what is this??
+print("*** tape test:")
+print()
+print(print_tape(empty, pad_end, pad_start, dis_length, visible_tape_section))
+print("\n")
+
+print("*** render test:")
+print()
+print(test_render(position, step_number, current_state, tape, speed, dis_length))
+print("\n")
+>>>>>>> Stashed changes
 
 print("count_list_members test:")
 print("the tested list:")
@@ -42,3 +67,10 @@ print("count_specific_member test:")
 print(count_specific_member(f, "A"))
 #unknown characters are addded up in the function aswell, can use this to check the string is valid with our stirng alphabet
 print(count_specific_member(f, "v"))
+<<<<<<< Updated upstream
+=======
+print()
+print("\n")
+
+
+>>>>>>> Stashed changes

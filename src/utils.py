@@ -111,3 +111,21 @@ def count_specific_member(list, character): #returns a specific charaters count,
         count_character = total_count[-1]
     #print(count_character)
     return count_character
+
+def count_list_members_json(tape):
+    tape_data = {}
+    for character in tape:
+        if character in tape:
+            tape_data[character] += 1
+        else:
+            tape_data[character] = 1
+    return tape_data
+
+def count_specific_member_json(tape, character):
+    tape_data = count_list_members_json(tape)
+    char_count = tape_data[character]
+    return char_count
+
+def os_check():
+    os_name = os.name
+    print(os_name)
