@@ -89,8 +89,8 @@ def argument_parser_pyinquirer():
         },
         {
             'type' : 'input',
-            'name' : 'transactions',
-            'message':'Enter the full path to the transactions:'
+            'name' : 'transitions',
+            'message':'Enter the full path to the transitions:'
         },
         {
             'type': 'input',
@@ -101,8 +101,8 @@ def argument_parser_pyinquirer():
         {
             'type' : 'input',
             'name' : 'end_state',
-            'message':'Enter the final state (default: q0):',
-            'default': 'q2'
+            'message':'Enter the final state (default: qdone):',
+            'default': 'qdone'
         },
         {
             'type' : 'input',

@@ -26,8 +26,12 @@ def display_tape_length():
     return DISPLAY_TAPE_LENGTH
 
 def print_system_clear():
-    #print cli clear (as if you type cls or clear depending on os)
+    #print cli clear unix(as if you type cls or clear depending on os)
     os.system('clear')
+
+def print_system_cls():
+    #print cli cls for windows
+    os.system('cls')
 
 def stringify(list):
     # Concatenate lists into string
