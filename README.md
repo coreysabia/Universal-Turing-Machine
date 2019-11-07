@@ -1,10 +1,5 @@
 # Universal Turing Machine
 
-## Local Development
-
-1. Start by building pipenv files off of `requirements.txt` by running `pipenv update`.
-2. 
-
 ### Meet the Team
 <div>
   <p align="center">
