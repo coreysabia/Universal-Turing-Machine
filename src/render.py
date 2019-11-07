@@ -12,6 +12,7 @@ def render(position, step_number, current_state, tape, speed, dis_length):
     empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
     # Print step, postion, current state information
     print_info(position, step_number, current_state)
+    print_counts(tape)
     # Return for spacing
     print()
     # Print dynamic tape
@@ -26,6 +27,7 @@ def test_render(position, step_number, current_state, tape, speed, dis_length):
     empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
     # Print step, postion, current state information
     print_info(position, step_number, current_state)
+    print_counts(tape)
     # Return for spacing
     print()
     # Print dynamic tape
@@ -44,7 +46,7 @@ def dynamic_padding(position, tape, dis_length):
     return empty, pad_end, pad_start, dis_length, vis_tape
 
 def print_tape(empty, pad_end, pad_start, dis_length, visible_tape_section):
-    pad_icons = dis_length * 2 * '•'
+    pad_icons = dis_length * 2 * ' '
     print(pad_icons + '↓' + pad_icons)
     print(tape_visualization(pad_start * empty + visible_tape_section + pad_end * empty))
     print(pad_icons + '↑' + pad_icons)
@@ -53,5 +55,14 @@ def print_info(position, step_number, current_state):
     print('Step Number: {}'.format(str(step_number).rjust(12)))
     print('Current State: {}'.format(str(current_state).rjust(10)))
     print('Tape Position: {} '.format(str(position).rjust(10)))
+    
+def print_counts(tape):
+    character = '0'
+    c = '0'
+    b = '1'
+    if c in tape:
+        print('Count of 0: {}'.format(str(count_specific_member_json(tape, "0")).rjust(13)))
+    if b in tape:
+        print('Count of 1: {}'.format(str(count_specific_member_json(tape, "1")).rjust(8)))
 
 

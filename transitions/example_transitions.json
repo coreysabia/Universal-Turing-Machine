@@ -14,6 +14,23 @@
           "writeValue": "c",
           "moveTo": "right",
           "nextState": "q3"
+        },
+        "q1": {
+          "a": {
+            "writeValue": "b",
+            "moveTo": "right",
+            "nextState": "q1"
+          },
+          "b": {
+            "writeValue": "b",
+            "moveTo": "left",
+            "nextState": "q2"
+          },
+          "c": {
+            "writeValue": "c",
+            "moveTo": "left",
+            "nextState": "q3"
+          }
         }
-    }
+}
 }

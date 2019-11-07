@@ -18,9 +18,12 @@ def main():
         print()
         print('Input: {}'.format(args.input_tape))
         print('Output: {}'.format(turing_machine))
+        print('The Turing Machine answered YES')
     except Exception as e:
         print('Something went wrong! Issue: {}'.format(e))
-
+        print()
+        print('The Turing Machine answered NO')
+        print()
 
 if __name__ == '__main__':
     main()
