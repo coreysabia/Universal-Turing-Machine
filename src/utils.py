@@ -34,7 +34,7 @@ def stringify(list):
     return str.join('', list)
 
 def tape_visualization(string):
-    return '|'.join(string[i:i + 1] for i in range(0, len(string)))
+    return '-'.join(string[i:i + 1] for i in range(0, len(string)))
 
 def next_position(position, direction):
     next_position = position + get_next_direction(direction)
@@ -59,7 +59,7 @@ def check_list_length(list): #skips over empty space without cleaning
     for clean in clean:
          count += 1
     return count
-
+ 
 def count_list_members(list): # counts the occurances of each charater in a list
     #string = stringify(list)
     char_a = 0
