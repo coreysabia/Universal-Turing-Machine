@@ -68,17 +68,17 @@ class TuringMachine(object):
                     raise Exception('Invalid config! State "{}" needs to be defined!'.format(action['nextState']))
 
 
-def argument_parser(): #***matt will change***
-    ap = argparse.ArgumentParser(description='A Universal Turing Machine for COMSC 330')
-    ap.add_argument('-b', '--start_state', type=str, action='store', default='q0', help='Define the begining state, default is q0')
-    ap.add_argument('-e', '--ending_state', type=str, action='store', default='qdone', help='Define the ending state, default is qdone')
-    ap.add_argument('-s', '--speed', type=float, action='store', default=.3, help='Define the speed of the states as they are rendered in the CLI')
-    ap.add_argument('-l', '--rendered_tape_length', type=float, action='store', default=15, help='Define the rendered length of the tape')
-    r_args = ap.add_argument_group('Required arguments')
-    r_args.add_argument('-i', '--transitions', type=str, action='store', default=False, required=True, help='Define the path to the UTM Transitions, as a JSON file.')
-    r_args.add_argument('-t', '--input_tape', type=str, action='store', default=False, required=True, help='Define the path to the input tape, as a txt file.')
+#def argument_parser(): #***matt will change***
+#    ap = argparse.ArgumentParser(description='A Universal Turing Machine for COMSC 330')
+#    ap.add_argument('-b', '--start_state', type=str, action='store', default='q0', help='Define the begining state, default is q0')
+#    ap.add_argument('-e', '--ending_state', type=str, action='store', default='qdone', help='Define the ending state, default is qdone')
+#    ap.add_argument('-s', '--speed', type=float, action='store', default=.3, help='Define the speed of the states as they are rendered in the CLI')
+#    ap.add_argument('-l', '--rendered_tape_length', type=float, action='store', default=15, help='Define the rendered length of the tape')
+#    r_args = ap.add_argument_group('Required arguments')
+#    r_args.add_argument('-i', '--transitions', type=str, action='store', default=False, required=True, help='Define the path to the UTM Transitions, as a JSON file.')
+#    r_args.add_argument('-t', '--input_tape', type=str, action='store', default=False, required=True, help='Define the path to the input tape, as a txt file.')
 
-    return ap.parse_args()
+#    return ap.parse_args()
 
 def argument_parser_pyinquirer():
     questions = [
@@ -107,7 +107,8 @@ def argument_parser_pyinquirer():
         {
             'type' : 'input',
             'name' : 'speed',
-            'message':'Enter the desired speed of the Turing Machine:'
+            'message':'Enter the desired speed of the Turing Machine:',
+            'default': '0.03'
         },
         {
             'type' : 'input',
