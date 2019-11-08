@@ -8,7 +8,7 @@ import time
 def render(position, step_number, current_state, tape, speed, dis_length):
     # Clear screen to wipe previous state
     os_flag = os_check()
-    if (os_flag == nt):
+    if (os_flag == 'Windows'):
         print_system_cls()
     else:
         print_system_clear()

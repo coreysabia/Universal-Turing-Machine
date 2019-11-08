@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+from platform import system
 # Set the length of the tape 
 # that is visable to the user
 DISPLAY_TAPE_LENGTH = 10
@@ -139,5 +140,8 @@ def count_specific_member_json(tape, character):
     return char_count
 
 def os_check():
-    os_name = os.name
-    print(os_name)
+    #os_name2 = os.name
+    os_name = system() 
+    #print(os_name)
+    #print(os_name2)
+    return os_name
