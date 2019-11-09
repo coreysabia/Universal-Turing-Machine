@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+from platform import system
 # Set the length of the tape 
 # that is visable to the user
 DISPLAY_TAPE_LENGTH = 10
@@ -26,8 +27,12 @@ def display_tape_length():
     return DISPLAY_TAPE_LENGTH
 
 def print_system_clear():
-    #print cli clear (as if you type cls or clear depending on os)
+    #print cli clear unix(as if you type cls or clear depending on os)
     os.system('clear')
+
+def print_system_cls():
+    #print cli cls for windows
+    os.system('cls')
 
 def stringify(list):
     # Concatenate lists into string
@@ -135,5 +140,8 @@ def count_specific_member_json(tape, character):
     return char_count
 
 def os_check():
-    os_name = os.name
-    print(os_name)
+    #os_name2 = os.name
+    os_name = system() 
+    #print(os_name)
+    #print(os_name2)
+    return os_name

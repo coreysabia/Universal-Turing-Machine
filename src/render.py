@@ -7,7 +7,11 @@ import time
 
 def render(position, step_number, current_state, tape, speed, dis_length):
     # Clear screen to wipe previous state
-    print_system_clear()
+    os_flag = os_check()
+    if (os_flag == 'Windows'):
+        print_system_cls()
+    else:
+        print_system_clear()
     # Initialize dynamic padding variables
     empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
     # Print step, postion, current state information
