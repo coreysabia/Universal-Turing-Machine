@@ -1,5 +1,8 @@
-from src.utils import *
-from src.utm import *
+from utils import *
+from utm import *
+
+print('***os_check function:')
+os_check()
 
 
 print('***argument_parser_pyinquirer:')
