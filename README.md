@@ -1,6 +1,6 @@
 # Universal Turing Machine
 
-## Local Development
+## Local Development Enviroment (Do this first)
 
 ### If you do not already have a python enviroment installed, start here.
 1. Start by installing `Python 3.7`
@@ -9,20 +9,18 @@
 4. Install pipenv by running `pip install pipenv`
 5. Then follow list below.
 
-### To build the local pipenv, start here.
+### To build the local python enviroment with pipenv, start here.
 1. Start by building pipenv files off of `requirements.txt` by running `pipenv update`.
-2. 
 
 
-## Run the UTM
-
-### Try running this to test the UTM:
-
-### unix
-./universal_turing_machine --transitions transitions/example_multiplication.json --input_tape "00 00" --rendered_tape_length 30 --speed 0.01
-
-### windows
-universal_turing_machine --transitions transitions/example_multiplication.json --input_tape "00 00" --rendered_tape_length 30 --speed 0.01
+## Running the UTM (Then do this)
+1. Make sure you are in your local python enviroment by running `pipenv shell`.
+2. Then make sure you are in the main directory where the file `run.py` is.
+3. Finally, run one of the following commands, depending on what OS you are on.
+### For unix:
+`./run.py`
+### For windows:
+`run.py`
 
 
 ### Meet the Team
