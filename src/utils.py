@@ -33,7 +33,8 @@ def stringify(list):
     return str.join('', list)
 
 def tape_visualization(string):
-    return '-'.join(string[i:i + 1] for i in range(0, len(string)))
+    return ' '.join(string[i:i + 1] for i in range(0, len(string)))
+
 
 def clean_list(list): # !!!!!!!!!!!!!!will not clean unknown charaters from list, should add that functionality!!!!!!!!!!!1
     # Remove empty characters from a list which 
