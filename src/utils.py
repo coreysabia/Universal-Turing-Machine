@@ -9,16 +9,15 @@ TAPE_MOVEMENTS = {'right': 1, 'left': -1}
 # For returning an empty character 
 EMPTY_CHARACTER = ' '
 
-SPEED = 0.1
-
-def get_speed():
-    return SPEED
-
 def tape_movements():
     return TAPE_MOVEMENTS.keys()
 
 def get_next_direction(direction):
     return TAPE_MOVEMENTS[direction]
+
+def next_position(position, direction):
+    next_position = position + get_next_direction(direction)
+    return next_position
     
 def empty_char():
     return EMPTY_CHARACTER
@@ -26,24 +25,13 @@ def empty_char():
 def display_tape_length():
     return DISPLAY_TAPE_LENGTH
 
-def print_system_clear():
-    #print cli clear unix(as if you type cls or clear depending on os)
-    os.system('clear')
-
-def print_system_cls():
-    #print cli cls for windows
-    os.system('cls')
-
 def stringify(list):
     # Concatenate lists into string
     return str.join('', list)
 
 def tape_visualization(string):
-    return '-'.join(string[i:i + 1] for i in range(0, len(string)))
+    return ' '.join(string[i:i + 1] for i in range(0, len(string)))
 
-def next_position(position, direction):
-    next_position = position + get_next_direction(direction)
-    return next_position
 
 def clean_list(list): # !!!!!!!!!!!!!!will not clean unknown charaters from list, should add that functionality!!!!!!!!!!!1
     # Remove empty characters from a list which 
@@ -145,3 +133,11 @@ def os_check():
     #print(os_name)
     #print(os_name2)
     return os_name
+
+def print_system_clear():
+    #print cli clear unix(as if you type cls or clear depending on os)
+    os.system('clear')
+
+def print_system_cls():
+    #print cli cls for windows
+    os.system('cls')

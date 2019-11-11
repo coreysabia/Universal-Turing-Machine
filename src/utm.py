@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from PyInquirer import *
-import argparse
+from PyInquirer import style_from_dict, Token, prompt, Separator
+from examples import custom_style_1
 from src.render import *
 from src.utils import *
+import json
 
 
 class TuringMachine(object):
@@ -13,7 +14,7 @@ class TuringMachine(object):
         #initialize variables
         self.transitions = transitions
         self.tape = list(input_tape)
-        self.speed = speed
+        self.speed = float(speed)
         self.start_state = start_state
         self.current_state = start_state
         self.end_state = ending_state
@@ -26,7 +27,6 @@ class TuringMachine(object):
         
         #render_output
         render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
-
         #Add to step_number of steps and move position
         while self.current_state != self.end_state:
             self.step_number += 1
@@ -68,53 +68,55 @@ class TuringMachine(object):
                     raise Exception('Invalid config! State "{}" needs to be defined!'.format(action['nextState']))
 
 
-#def argument_parser(): #***matt will change***
-#    ap = argparse.ArgumentParser(description='A Universal Turing Machine for COMSC 330')
-#    ap.add_argument('-b', '--start_state', type=str, action='store', default='q0', help='Define the begining state, default is q0')
-#    ap.add_argument('-e', '--ending_state', type=str, action='store', default='qdone', help='Define the ending state, default is qdone')
-#    ap.add_argument('-s', '--speed', type=float, action='store', default=.3, help='Define the speed of the states as they are rendered in the CLI')
-#    ap.add_argument('-l', '--rendered_tape_length', type=float, action='store', default=15, help='Define the rendered length of the tape')
-#    r_args = ap.add_argument_group('Required arguments')
-#    r_args.add_argument('-i', '--transitions', type=str, action='store', default=False, required=True, help='Define the path to the UTM Transitions, as a JSON file.')
-#    r_args.add_argument('-t', '--input_tape', type=str, action='store', default=False, required=True, help='Define the path to the input tape, as a txt file.')
-
-#    return ap.parse_args()
-
-def argument_parser_pyinquirer():
+def request_user_input():
     questions = [
         {
             'type' : 'input',
             'name' : 'input_tape',
-            'message':'Enter the full path to the tape:'
+            'message':'Enter the input tape:',
+            'validate': lambda answer: 'ERROR: You must input a tape!' \
+                if len(answer) == 0 else True
         },
         {
             'type' : 'input',
             'name' : 'transitions',
-            'message':'Enter the full path to the transitions:'
+            'default': 'transitions/example_multiplication.json',
+            'message':'Enter the path to the transitions file:',
+            'validate': lambda answer: 'ERROR: You must input a path the file!' \
+                if len(answer) == 0 else True
         },
         {
             'type': 'input',
             'name': 'start_state',
             'message': 'Enter the start state (default: q0):',
-            'default': 'q0'
+            'default': 'q0',
+            'validate': lambda answer: 'ERROR: You must input a starting state!' \
+                if len(answer) == 0 else True
         },
         {
             'type' : 'input',
             'name' : 'end_state',
             'message':'Enter the final state (default: qdone):',
-            'default': 'qdone'
+            'default': 'qdone',
+            'validate': lambda answer: 'ERROR: You must input a final state!' \
+                if len(answer) == 0 else True
         },
         {
             'type' : 'input',
             'name' : 'speed',
-            'message':'Enter the desired speed of the Turing Machine:',
-            'default': '0.03'
+            'message':'Enter the speed of the output (default: 0.03):',
+            'default': '0.03',
+            'validate': lambda answer: 'ERROR: You must input a speed!' \
+                if len(answer) == 0 else True
         },
         {
             'type' : 'input',
             'name' : 'rendered_tape_length',
-            'message':'Enter how much of the tape you would like to see:'
+            'message':'Enter how much of the tape you would like to see (default: 15):',
+            'default': '15',
+            'validate': lambda answer: 'ERROR: You must input a length!' \
+                if len(answer) == 0 else True
         }
     ] 
-    answers = prompt(questions)
+    answers = prompt(questions, style=custom_style_1)
     return answers
