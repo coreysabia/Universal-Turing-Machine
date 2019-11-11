@@ -25,14 +25,6 @@ def empty_char():
 def display_tape_length():
     return DISPLAY_TAPE_LENGTH
 
-def print_system_clear():
-    #print cli clear unix(as if you type cls or clear depending on os)
-    os.system('clear')
-
-def print_system_cls():
-    #print cli cls for windows
-    os.system('cls')
-
 def stringify(list):
     # Concatenate lists into string
     return str.join('', list)
@@ -141,3 +133,11 @@ def os_check():
     #print(os_name)
     #print(os_name2)
     return os_name
+
+def print_system_clear():
+    #print cli clear unix(as if you type cls or clear depending on os)
+    os.system('clear')
+
+def print_system_cls():
+    #print cli cls for windows
+    os.system('cls')
