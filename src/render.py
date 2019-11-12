@@ -3,7 +3,6 @@ from src.utm import *
 import os
 import time
 from neotermcolor import cprint
-#IGNORE THIS FILE FOR NOW PLEASE
 
 def render(position, step_number, current_state, tape, speed, dis_length):
     # Clear screen to wipe previous state
@@ -15,11 +14,13 @@ def render(position, step_number, current_state, tape, speed, dis_length):
 
     # Initialize dynamic padding variables
     empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
-
+    print()
+    print()
     # Print step, postion, current state information
     print_info(position, step_number, current_state)
     print()
-
+    print()
+    
     # Print dynamic tape
     print_tape(empty, pad_end, pad_start, dis_length, vis_tape)
     print()
@@ -28,6 +29,30 @@ def render(position, step_number, current_state, tape, speed, dis_length):
     #print_counts(tape)
     # Pause for amount of seconds passed in by user
     time.sleep(speed)
+
+def render_final(position, step_number, current_state, tape, speed, dis_length):
+    # Clear screen to wipe previous state
+    os_flag = os_check()
+    if (os_flag == 'Windows'):
+        print_system_cls()
+    else:
+        print_system_clear()
+
+    print()
+    print()
+
+    # Initialize dynamic padding variables
+    empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
+
+    # Print step, postion, current state information
+    print_info_final(position, step_number, current_state)
+    print()
+    print()
+
+    # Print dynamic tape
+    print_tape(empty, pad_end, pad_start, dis_length, vis_tape)
+    print()
+
 
 def dynamic_padding(position, tape, dis_length):
     # Get the length of the tape
@@ -60,9 +85,17 @@ def print_info(position, step_number, current_state):
     step_number_text = ' Step Number: {} '.format(str(step_number).rjust(12))
     current_state_text = ' Current State: {} '.format(str(current_state).rjust(10))
     tape_position_text = ' Tape Position: {} '.format(str(position).rjust(10))
-    cprint(step_number_text, 60)
-    cprint(current_state_text, 60)
-    cprint(tape_position_text, 60)
+    cprint(step_number_text, 110)
+    cprint(current_state_text, 110)
+    cprint(tape_position_text, 110)
+
+def print_info_final(position, step_number, current_state):
+    step_number_text = ' Total Number of Steps: {} '.format(str(step_number).rjust(8))
+    current_state_text = ' Final State: {} '.format(str(current_state).rjust(18))
+    tape_position_text = ' Final Tape Position: {} '.format(str(position).rjust(10))
+    cprint(step_number_text, 110)
+    cprint(current_state_text, 110)
+    cprint(tape_position_text, 110)
 
 
     

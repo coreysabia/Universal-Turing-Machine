@@ -32,7 +32,8 @@ class TuringMachine(object):
             self.step_number += 1
             self.position = self.next_state(self.position)
             render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
-        render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
+        # render final position
+        render_final(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
 
         #return the string version of the tape
         return stringify(clean_list(self.tape))
@@ -80,7 +81,6 @@ def request_user_input():
         {
             'type' : 'input',
             'name' : 'transitions',
-            'default': 'transitions/example_multiplication.json',
             'message':'Enter the path to the transitions file:',
             'validate': lambda answer: 'ERROR: You must input a path the file!' \
                 if len(answer) == 0 else True
