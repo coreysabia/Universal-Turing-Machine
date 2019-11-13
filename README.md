@@ -20,7 +20,7 @@
 ### For unix:
 `./run.py`
 ### For windows:
-`run.py`
+`python run.py`
 
 
 ### Meet the Team
