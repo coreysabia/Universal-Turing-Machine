@@ -7,5 +7,5 @@ os_check()
 
 print('***argument_parser_pyinquirer:')
 print()
-argument_parser_pyinquirer()
+request_user_input()
 print('\n')
