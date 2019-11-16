@@ -26,5 +26,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with Test Files
       run: |
-        python3 src/tests.py
-        python3 src/tests2.py
+        python3 src/test.py
+        python3 src/test2.py
