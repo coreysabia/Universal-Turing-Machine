@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 from platform import system
+import json
 # Set the length of the tape 
 # that is visable to the user
 DISPLAY_TAPE_LENGTH = 10
@@ -141,3 +142,42 @@ def print_system_clear():
 def print_system_cls():
     #print cli cls for windows
     os.system('cls')
+
+
+def transition_encode(transition):
+    #pass in current transition from UTM run and return an int string of 0's and 1's
+        #states    
+    char_q0 = "0000"
+    char_q1 = "0001"
+    char_qdone = "0010"
+    char_q3 = "0011"
+    char_q4 = "0100"
+    char_q5 = "0101"
+    char_q6 = "0111"
+    char_q7 = "1000"
+    char_q8 = "1001"
+    char_q9 = "1010"
+    char_q10 = "1011"
+    
+    #tape charaters
+    char_X = "000"
+    char_Y = "001"
+    char_a = "010"
+    char_b = "011"
+    char_c = "100"
+    char_left_bracket = "101"
+    char_right_bracket = "110"
+    char_arrow = "111"
+
+    #directions
+    char_L = "0"
+    char_R = "1"
+    
+    data = {transition}
+    enumerated_data = count_list_members(data)
+    print(enumerated_data)
+    #for character in enumerated_data:
+        #if (char)
+    
+
+    
