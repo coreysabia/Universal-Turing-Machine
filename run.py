@@ -35,10 +35,10 @@ def main():
     except Exception as error:
         input_tape_list = list(requested_args['input_tape'])
         input_tape_string = requested_args['input_tape']
-
-        if error not in input_tape_list:
+        e = str(error)
+        if e not in input_tape_list:
             input_text_2 = ' Input Tape: {}'.format(requested_args['input_tape'])
-            error_text =' Oops! There was an error with your input tape! The error was caused by: {} '.format(error)
+            error_text =' Oops! There was an error with your input tape! The error was caused by: {} '.format(e)
 
             cprint(input_text_2, 110)
             print()
@@ -47,7 +47,7 @@ def main():
             print()
         else:
             input_text_2 = ' Input Tape: {}'.format(requested_args['input_tape'])
-            error_text =' Oops! There was an issue! The issue was: {} '.format(error)
+            error_text =' Oops! There was an issue! The issue was: {} '.format(e)
             cprint(input_text_2, 110)
             print()
             cprint(error_text, 119, 'on_red', attrs=['bold'])

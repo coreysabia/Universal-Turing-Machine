@@ -12,7 +12,6 @@
 ### To build the local python enviroment with pipenv, start here.
 1. Start by building pipenv files off of `requirements.txt` by running `pipenv update`.
 
-
 ## Running the UTM (Then do this)
 1. Make sure you are in your local python enviroment by running `pipenv shell`.
 2. Then make sure you are in the main directory where the file `run.py` is.
@@ -21,6 +20,41 @@
 `./run.py`
 ### For windows:
 `run.py`
+
+## Example
+
+```json
+{
+    "q0": {
+        " ": {
+            "write": "a",
+            "move": "right",
+            "nextState": "q1"
+        }
+    },
+    "q1": {
+        " ": {
+            "write": "b",
+            "move": "left",
+            "nextState": "q1"
+        },
+        "a": {
+            "write": "b",
+            "move": "left",
+            "nextState": "qdone"
+        }
+    }
+}
+```
+### Example Explanation
+
+Assumptions: Initial state is q0 and final state is qdone (you can define these when running the program)
+
+
+
+
+
+
 
 
 ### Meet the Team
@@ -38,7 +72,7 @@
       <img src="https://i.kinja-img.com/gawker-media/image/upload/s--FcuQIVJ3--/c_fill,fl_progressive,g_center,h_450,q_80,w_800/ulyovrzhi6hfocsa6ime.jpg" height="100px" width="100px" alt="Matt">
     </a>
     <p align="center"><strong>Matt</strong></p>
-    <p align="center">Chief Email Correspondent & Senior Python Hater</p>
+    <p align="center">Chief Email Correspondent & Senior Utils Developer</p>
   </p>
   
   <p align="center">
@@ -46,6 +80,6 @@
       <img src="https://cdn3.vectorstock.com/i/1000x1000/42/52/cute-baby-dinosaur-cartoon-vector-8404252.jpg" height="100px" width="100px" alt="Abby">
     </a>
     <p align="center"><strong>Abby</strong></p>
-    <p align="center">Lead Code Integrity Analyst & Senior Project Hater</p>
+    <p align="center">Lead Code Integrity Analyst & Senior Transitions Writer</p>
   </p>
 </div>

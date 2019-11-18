@@ -1,5 +1,5 @@
-from src.utils import *
-from src.utm import *
+from .utils import *
+from .utm import *
 import os
 import time
 from neotermcolor import cprint
