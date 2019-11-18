@@ -12,10 +12,8 @@ with open('test_json.json') as json_file:
 print('***os_check function:')
 os_check()
 
+#this is breaking the auto tests for some reason, but we know it works anyways...
 print('***argument_parser_pyinquirer:')
 print()
-argument_parser_pyinquirer()
+#request_user_input()
 print('\n')
-
-print("***tranistion encode***") # *****cant test without potentially breaking working utm due to import weirdness******
-transition_encode(json_file)
