@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 from PyInquirer import style_from_dict, Token, prompt, Separator
 from examples import custom_style_1
-from src.render import *
-from src.utils import *
+from render import *
+from utils import *
 import json
 
 
