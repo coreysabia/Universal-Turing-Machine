@@ -21,6 +21,10 @@
 ### For windows:
 `run.py`
 
+### Docker:
+1. docker build -t utm . 
+2. docker run -it utm:latest sh 
+
 ## Example
 
 ```json
