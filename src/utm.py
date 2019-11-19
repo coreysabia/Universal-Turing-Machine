@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import json
+import sys
+import os
 
 from PyInquirer import style_from_dict, Token, prompt, Separator
 from examples import custom_style_1
 
-from .render import *
-from .utils import *
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from render import *
+from utils import *
 
 class TuringMachine(object):
 

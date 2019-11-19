@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
-from src.utm import request_user_input, TuringMachine
+from src.utm import *
 from neotermcolor import cprint
 import json
 

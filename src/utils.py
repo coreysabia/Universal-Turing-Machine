@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 from platform import system
+
 # Set the length of the tape 
 # that is visable to the user
 DISPLAY_TAPE_LENGTH = 10

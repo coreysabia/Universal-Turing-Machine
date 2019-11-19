@@ -1,8 +1,10 @@
-from .utils import *
-from .utm import *
+# -*- coding: utf-8 -*-
 import os
 import time
 from neotermcolor import cprint
+
+from utils import *
+from utm import *
 
 def render(position, step_number, current_state, tape, speed, dis_length):
     # Clear screen to wipe previous state
