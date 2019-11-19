@@ -144,9 +144,9 @@ def print_system_cls():
     os.system('cls')
 
 
-def transition_encode(transition):
+def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     #pass in current transition from UTM run and return an int string of 0's and 1's
-        #states    
+    #states    
     char_q0 = "0000"
     char_q1 = "0001"
     char_qdone = "0010"
@@ -160,24 +160,117 @@ def transition_encode(transition):
     char_q10 = "1011"
     
     #tape charaters
-    char_X = "000"
-    char_Y = "001"
-    char_a = "010"
-    char_b = "011"
-    char_c = "100"
-    char_left_bracket = "101"
-    char_right_bracket = "110"
-    char_arrow = "111"
+    char_X = "0000"
+    char_Y = "0001"
+    char_a = "0010"
+    char_b = "0011"
+    char_c = "0100"
+    char_left_bracket = "0101"
+    char_right_bracket = "0110"
+    char_arrow = "0111"
+    char_space = "1000"
 
     #directions
     char_L = "0"
     char_R = "1"
-    
-    data = {transition}
-    enumerated_data = count_list_members(data)
-    print(enumerated_data)
-    #for character in enumerated_data:
-        #if (char)
-    
 
+    #end values
+    current_state = ''
+    read_head = ''
+    next_state = ''
+    write = ''
+    move = ''
+
+    #current state
+    if(currentState == 'q0'):
+        current_state = char_q0
+    elif(currentState == 'q1'):
+        current_state = char_q1
+    elif(currentState == 'qdone'):
+        current_state = char_qdone
+    elif(currentState == 'q3'):
+        current_state = char_q3
+    elif(currentState == 'q4'):
+        current_state = char_q4
+    elif(currentState == 'q5'):
+        current_state = char_q5
+    elif(currentState == 'q6'):
+        current_state = char_q6
+    elif(currentState == 'q7'):
+        current_state = char_q7
+    elif(currentState == 'q8'):
+        current_state = char_q8
+    elif(currentState == 'q9'):
+        current_state = char_q9
+    else:
+        current_state = char_q10
+
+    #next state
+    if(nextState == 'q0'):
+        next_state = char_q0
+    elif(nextState == 'q1'):
+        next_state = char_q1
+    elif(nextState == 'qdone'):
+        next_state = char_qdone
+    elif(nextState == 'q3'):
+        next_state = char_q3
+    elif(nextState == 'q4'):
+        next_state = char_q4
+    elif(nextState == 'q5'):
+        next_state = char_q5
+    elif(nextState == 'q6'):
+        next_state = char_q6
+    elif(nextState == 'q7'):
+        next_state = char_q7
+    elif(nextState == 'q8'):
+        next_state = char_q8
+    elif(nextState == 'q9'):
+        next_state = char_q9
+    else:
+        next_state = char_q10
     
+    #readhead
+    if(readHead == 'X'):
+        read_head = char_X
+    elif(readHead == 'Y'):
+        read_head = char_Y
+    elif(readHead == 'a'):
+        read_head = char_a
+    elif(readHead == 'b'):
+        read_head = char_b
+    elif(readHead == 'c'):
+        read_head = char_c
+    elif(readHead == '>'):
+        read_head = char_arrow
+    elif(readHead == '['):
+        read_head = char_left_bracket
+    elif(readHead == ']'):
+        read_head = char_right_bracket
+    else:
+        read_head = char_space
+
+
+
+    #write
+    if(writeValue == 'a'):
+        write = char_a
+    elif(writeValue == 'b'):
+        write = char_b
+    elif(writeValue == 'c'):
+        write = char_c
+    else:
+        write = char_space
+    
+    
+    #direction
+    if( moveTo == 'Right'):
+        move = char_R
+    else:
+        move = char_L
+
+    #(q1, a)-->(q2, b, L)
+    #(current_state, read_head)-->(next_state, write, move)
+
+
+    #append all values and return
+    return current_state + read_head + next_state + write + move
