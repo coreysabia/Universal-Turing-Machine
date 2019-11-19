@@ -19,7 +19,7 @@
 ### For unix:
 `./run.py`
 ### For windows:
-`run.py`
+`python run.py`
 
 ### Docker:
 1. docker build -t utm . 
