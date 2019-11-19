@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 from platform import system
+
 # Set the length of the tape 
 # that is visable to the user
 DISPLAY_TAPE_LENGTH = 10
@@ -12,6 +13,7 @@ EMPTY_CHARACTER = ' '
 def tape_movements():
     return TAPE_MOVEMENTS.keys()
 
+# .lowercase() whaterver the direction is to work with our tape_movements keys
 def get_next_direction(direction):
     return TAPE_MOVEMENTS[direction]
 
