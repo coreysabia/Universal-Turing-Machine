@@ -1,199 +1,199 @@
 {
-"q0": {
-    " ": {
-        "writeValue": " ",
-        "moveTo": "right",
-        "nextState": "qdone"
+    "q0": {
+        " ": {
+            "writeValue": " ",
+            "moveTo": "right",
+            "nextState": "qdone"
+        },
+        "a": {
+            "writeValue": " ",
+            "moveTo": "right",
+            "nextState": "q1"
+        },
+        "b": {
+            "writeValue": " ",
+            "moveTo": "right",
+            "nextState": "q2"
+        },
+        "c": {
+            "writeValue": " ",
+            "moveTo": "right",
+            "nextState": "q3"
+        }
     },
-    "a": {
-        "writeValue": " ",
-        "moveTo": "right",
-        "nextState": "q1"
+    "q1": {
+        " ": {
+            "writeValue": " ",
+            "moveTo": "right",
+            "nextState": "qdone"
+        },
+        "a": {
+            "writeValue": "a",
+            "moveTo": "right",
+            "nextState": "q4"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "right",
+            "nextState": "q4"
+        },
+        "c": {
+            "writeValue": "c",
+            "moveTo": "right",
+            "nextState": "q4"
+        }
     },
-    "b": {
-        "writeValue": " ",
-        "moveTo": "right",
-        "nextState": "q2"
+    "q2": {
+        " ": {
+            "writeValue": " ",
+            "moveTo": "right",
+            "nextState": "qdone"
+        },
+        "a": {
+            "writeValue": "a",
+            "moveTo": "right",
+            "nextState": "q5"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "right",
+            "nextState": "q5"
+        },
+        "c": {
+            "writeValue": "c",
+            "moveTo": "right",
+            "nextState": "q5"
+        }
     },
-    "c":{
-	"writeValue": " ",
-	"moveTo": "right",
-	"nextState": "q3"
+    "q3": {
+        " ": {
+            "writeValue": " ",
+            "moveTo": "right",
+            "nextState": "qdone"
+        },
+        "a": {
+            "writeValue": "a",
+            "moveTo": "right",
+            "nextState": "q6"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "right",
+            "nextState": "q6"
+        },
+        "c": {
+            "writeValue": "c",
+            "moveTo": "right",
+            "nextState": "q6"
+        }
+    },
+    "q4": {
+        " ": {
+            "writeValue": " ",
+            "moveTo": "left",
+            "nextState": "q7"
+        },
+        "a": {
+            "writeValue": "a",
+            "moveTo": "right",
+            "nextState": "q4"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "right",
+            "nextState": "q4"
+        },
+        "c": {
+            "writeValue": "c",
+            "moveTo": "right",
+            "nextState": "q4"
+        }
+    },
+    "q5": {
+        " ": {
+            "writeValue": " ",
+            "moveTo": "left",
+            "nextState": "q8"
+        },
+        "a": {
+            "writeValue": "a",
+            "moveTo": "right",
+            "nextState": "q5"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "right",
+            "nextState": "q5"
+        },
+        "c": {
+            "writeValue": "c",
+            "moveTo": "right",
+            "nextState": "q5"
+        }
+    },
+    "q6": {
+        " ": {
+            "writeValue": " ",
+            "moveTo": "left",
+            "nextState": "q9"
+        },
+        "a": {
+            "writeValue": "a",
+            "moveTo": "right",
+            "nextState": "q6"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "right",
+            "nextState": "q6"
+        },
+        "c": {
+            "writeValue": "c",
+            "moveTo": "right",
+            "nextState": "q6"
+        }
+    },
+    "q7": {
+        "a": {
+            "writeValue": " ",
+            "moveTo": "left",
+            "nextState": "q10"
+        }
+    },
+    "q8": {
+        "b": {
+            "writeValue": " ",
+            "moveTo": "left",
+            "nextState": "q10"
+        }
+    },
+    "q9": {
+        "c": {
+            "writeValue": " ",
+            "moveTo": "left",
+            "nextState": "q10"
+        }
+    },
+    "q10": {
+        " ": {
+            "writeValue": " ",
+            "moveTo": "right",
+            "nextState": "q0"
+        },
+        "a": {
+            "writeValue": "a",
+            "moveTo": "left",
+            "nextState": "q10"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "left",
+            "nextState": "q10"
+        },
+        "c": {
+            "writeValue": "c",
+            "moveTo": "left",
+            "nextState": "q10"
+        }
     }
-},
-"q1": {
-    " ": {
-        "writeValue": " ",
-        "moveTo": "right",
-        "nextState": "qdone"
-    },
-    "a": {
-        "writeValue": "a",
-        "moveTo": "right",
-        "nextState": "q4"
-    },
-    "b": {
-        "writeValue": "b",
-        "moveTo": "right",
-        "nextState": "q4"
-    },
-    "c":{
-	"writeValue": "c",
-	"moveTo": "right",
-	"nextState": "q4"
-    }
-},
-"q2": {
-    " ": {
-        "writeValue": " ",
-        "moveTo": "right",
-        "nextState": "qdone"
-    },
-    "a": {
-        "writeValue": "a",
-        "moveTo": "right",
-        "nextState": "q5"
-    },
-    "b": {
-        "writeValue": "b",
-        "moveTo": "right",
-        "nextState": "q5"
-    },
-    "c": {
-	"writeValue": "c",
-	"moveTo": "right",
-	"nextState": "q5"
-    }
-},
-"q3": {
-    " ": {
-        "writeValue": " ",
-        "moveTo": "right",
-        "nextState": "qdone"
-    },
-    "a": {
-        "writeValue": "a",
-        "moveTo": "right",
-        "nextState": "q6"
-    },
-    "b": {
-        "writeValue": "b",
-        "moveTo": "right",
-        "nextState": "q6"
-    },
-    "c": {
-	"writeValue": "c",
-	"moveTo": "right",
-	"nextState": "q6"
-    }
-},
-"q4": {
-    " ": {
-        "writeValue": " ",
-        "moveTo": "left",
-        "nextState": "q7"
-    },
-    "a": {
-        "writeValue": "a",
-        "moveTo": "right",
-        "nextState": "q4"
-    },
-    "b": {
-        "writeValue": "b",
-        "moveTo": "right",
-        "nextState": "q4"
-    },
-    "c": {
-	"writeValue": "c",
-	"moveTo": "right",
-	"nextState": "q4"
-    }
-},
-"q5": {
-    " ": {
-        "writeValue": " ",
-        "moveTo": "left",
-        "nextState": "q8"
-    },
-    "a": {
-        "writeValue": "a",
-        "moveTo": "right",
-        "nextState": "q5"
-    },
-    "b": {
-        "writeValue": "b",
-        "moveTo": "right",
-        "nextState": "q5"
-    },
-    "c": {
-        "writeValue": "c",
-        "moveTo": "right",
-        "nextState": "q5"
-    }
-},
-"q6": {
-    " ": {
-        "writeValue": " ",
-        "moveTo": "left",
-        "nextState": "q9"
-    },
-    "a": {
-        "writeValue": "a",
-        "moveTo": "right",
-        "nextState": "q6"
-    },
-    "b": {
-        "writeValue": "b",
-        "moveTo": "right",
-        "nextState": "q6"
-    },
-    "c": {
-        "writeValue": "c",
-        "moveTo": "right",
-        "nextState": "q6"
-    }
-},
-"q7": {
-    "a": {
-        "writeValue": " ",
-        "moveTo": "left",
-        "nextState": "q10"
-    }
-  },
-"q8": {
-    "b": {
-        "writeValue": " ",
-        "moveTo": "left",
-        "nextState": "q10"
-    }
-  },
-"q9": {
-    "c": {
-        "writeValue": " ",
-        "moveTo": "left",
-        "nextState": "q10"
-    }
-  },
-"q10": {
-    " ": {
-        "writeValue": " ",
-        "moveTo": "right",
-        "nextState": "q0"
-    },
-    "a": {
-        "writeValue": "a",
-        "moveTo": "left",
-        "nextState": "q10"
-    },
-    "b": {
-        "writeValue": "b",
-        "moveTo": "left",
-        "nextState": "q10"
-    },
-    "c": {
-        "writeValue": "c",
-        "moveTo": "left",
-        "nextState": "q10"
-    }
-  }
 }

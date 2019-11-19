@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import json
+import sys
+import os
+
 from PyInquirer import style_from_dict, Token, prompt, Separator
 from examples import custom_style_1
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from render import *
 from utils import *
-import json
-
 
 class TuringMachine(object):
 
@@ -120,3 +124,22 @@ def request_user_input():
     ] 
     answers = prompt(questions, style=custom_style_1)
     return answers
+
+
+
+
+
+
+
+
+
+
+
+
+
+#end state to favorable state??
+#encoding of transactions
+# print what the given transactions are -- print what the encoding transactions are after it finishes running
+# maybe encode off of the transition q1,q2,q3?
+#if index goes out of bounds?
+#after 10 minutes, ask the user if their thing is nondetermanistic
