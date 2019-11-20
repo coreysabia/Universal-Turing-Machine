@@ -1,0 +1,18 @@
+//This is an example of 2 transitions
+
+{                           // Open bracket to group objects
+  "q1": {
+    "a": {
+      "writeValue": "b",
+      "nextState": "q2",
+      "moveTo": "left"
+    }
+  },                        // Comma after the end of an object that isnt the last in the group
+  "q2": {
+    " ": {
+      "writeValue": "b",
+      "nextState": "q3",
+      "moveTo": "right"
+    }
+  }                         // Last object in the list doesn't need a comma
+}                           // Close bracket to end the grouping
