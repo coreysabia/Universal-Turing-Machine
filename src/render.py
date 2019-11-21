@@ -6,6 +6,7 @@ from neotermcolor import cprint
 from utils import *
 from utm import *
 
+# main render function
 def render(position, step_number, current_state, tape, speed, dis_length):
     # Clear screen to wipe previous state
     os_flag = os_check()
@@ -28,7 +29,7 @@ def render(position, step_number, current_state, tape, speed, dis_length):
     print()
 
     # Print counts of characters seen in tape
-    #print_counts(tape)
+    # print_counts(tape)
     # Pause for amount of seconds passed in by user
     time.sleep(speed)
 

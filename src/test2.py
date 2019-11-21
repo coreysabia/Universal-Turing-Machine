@@ -9,17 +9,17 @@ currentState = "q0"
 readHead = " "
 
 
-
+# test for os check function
 print('***os_check function:')
 os_check()
 
-#this is breaking the auto tests for some reason, but we know it works anyways...
+# this is breaking the auto tests for some reason, but we know it works anyways...
 print('***argument_parser_pyinquirer:')
 print()
 #request_user_input()
 print('\n')
 
-
+# transision encoding test
 print("***transition_encode:")
 print('should be: ')
 print('0000 1000 0001 1000 1')

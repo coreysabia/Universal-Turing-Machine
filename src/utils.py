@@ -9,6 +9,7 @@ TAPE_MOVEMENTS = {'right': 1, 'left': -1}
 # For returning an empty character 
 EMPTY_CHARACTER = ' '
 
+# tape movement keys
 def tape_movements():
     return TAPE_MOVEMENTS.keys()
 
@@ -16,25 +17,31 @@ def tape_movements():
 def get_next_direction(direction):
     return TAPE_MOVEMENTS[direction]
 
+# takes current position and calls next direction function to get next position
 def next_position(position, direction):
     next_position = position + get_next_direction(direction)
     return next_position
-    
+
+# allows for empty character    
 def empty_char():
     return EMPTY_CHARACTER
-    
+
+# returns tape length data field for render  
 def display_tape_length():
     return DISPLAY_TAPE_LENGTH
 
+# takes a list as input and returns a string
 def stringify(list):
     # Concatenate lists into string
     return str.join('', list)
 
+# 
 def tape_visualization(string):
     return ' '.join(string[i:i + 1] for i in range(0, len(string)))
 
-
-def clean_list(list): # !!!!!!!!!!!!!!will not clean unknown charaters from list, should add that functionality!!!!!!!!!!!1
+# removes spaces and blanks from list
+# will not clean unknown charaters from list
+def clean_list(list):
     # Remove empty characters from a list which 
     # might have empty characters and return it
     while '' in list:
@@ -43,7 +50,8 @@ def clean_list(list): # !!!!!!!!!!!!!!will not clean unknown charaters from list
         list.remove(' ')
     return list
 
-def check_list_length(list): #skips over empty space without cleaning
+# returns the length of the given list
+def check_list_length(list):
     #THIS needs to return the occurences of a specific character (for each character that is found)
     count = 0
     # Return the number of occurrences
@@ -54,7 +62,8 @@ def check_list_length(list): #skips over empty space without cleaning
          count += 1
     return count
  
-def count_list_members(list): # counts the occurances of each charater in a list
+# counts the occurances of each charater in a list
+def count_list_members(list):
     #string = stringify(list)
     char_a = 0
     char_b = 0
@@ -86,7 +95,8 @@ def count_list_members(list): # counts the occurances of each charater in a list
             char_unknown += 1
     return [char_a, char_b, char_c, char_arrow, char_x, char_y, char_left_bracket, char_right_bracket, char_unknown]
 
-def count_specific_member(list, character): #returns a specific charaters count, pass a list and a charater you want to know how many are in the list(upper or lower case)
+# returns a specific charaters count, pass a list and a charater you want to know how many are in the list(upper or lower case)
+def count_specific_member(list, character):
     total_count = count_list_members(list)
     #print(total_count)
     character = character.lower()
@@ -114,6 +124,7 @@ def count_specific_member(list, character): #returns a specific charaters count,
     #print(count_character)
     return count_character
 
+# counts all of the charaters in a list using json format to return
 def count_list_members_json(tape):
     tape_data = {}
     for character in tape:
@@ -123,11 +134,14 @@ def count_list_members_json(tape):
             tape_data[character] = 1
     return tape_data
 
+# calls the previous function to return a specific value in the json 
+# takes in tape data and a charater
 def count_specific_member_json(tape, character):
     tape_data = count_list_members_json(tape)
     char_count = tape_data[character]
     return char_count
 
+# System call to determine the function needed to clear the terminal
 def os_check():
     #os_name2 = os.name
     os_name = system() 
@@ -135,15 +149,20 @@ def os_check():
     #print(os_name2)
     return os_name
 
+# cli clear for unix
 def print_system_clear():
     #print cli clear unix(as if you type cls or clear depending on os)
     os.system('clear')
 
+# cli clear for windows
 def print_system_cls():
     #print cli cls for windows
     os.system('cls')
 
-
+# function that encodes a transition
+# links each part of the transition to a string of 0's and 1's
+# tests all parts of the transtion to assign it a common value
+# returns the encoding in the proper format (current state, readhead)-->(next state, write, move direction)
 def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     #pass in current transition from UTM run and return an int string of 0's and 1's
     #states    
@@ -263,7 +282,7 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     
     
     #direction
-    if( moveTo == 'Right'):
+    if( moveTo == 'right'):
         move = char_R
     else:
         move = char_L

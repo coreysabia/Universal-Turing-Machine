@@ -2,7 +2,7 @@
 from utils import *
 from render import *
 
-
+# initializing variables for testing 
 position = 2
 step_number= 3
 current_state = 'idk'
@@ -20,12 +20,14 @@ f = [">","b","c","d","X","X","Y","[","a","b","c","]","a","b","c","]","a","b","c"
 print()
 print()
 
+# test for stringify function
 string = stringify(a)
 print("*** stringify test:")
 print()
 print(string)
 print("\n")
 
+# clean list test
 print("*** clean test:")
 print()
 print(clean_list(b))
@@ -33,21 +35,25 @@ print(clean_list(d))
 print(clean_list(e))
 print("\n")
 
+# check list test
 print("*** checklist length test:")
 print()
 print(check_list_length(b))
 print(check_list_length(f))
 print("\n")
 
+# test for next position
 print("*** next position:")
 print()
 print(next_position(c, "right"))
 print("\n")
 
+# os check test
 print("*** check_os test:")
 print()
 os_check()
 
+# stats test
 print("*** stats test:")
 print()
 print(print_info(position, step_number, current_state))
@@ -56,11 +62,13 @@ print("\n")
 
 empty, pad_end, pad_start, dis_length, visible_tape_section = dynamic_padding(position, tape, dis_length) # its me
 
+# test for the tape printing function
 print("*** tape test:")
 print()
 print(print_tape(empty, pad_end, pad_start, dis_length, visible_tape_section))
 print("\n")
 
+# test for the render function
 print("*** render test:")
 print()
 print(test_render(position, step_number, current_state, tape, speed, dis_length))
