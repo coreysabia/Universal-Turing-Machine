@@ -172,7 +172,7 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     #states    
     char_q0 = "0000"
     char_q1 = "0001"
-    char_qdone = "0010"
+    char_q2 = "0010"
     char_q3 = "0011"
     char_q4 = "0100"
     char_q5 = "0101"
@@ -181,6 +181,7 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     char_q8 = "1001"
     char_q9 = "1010"
     char_q10 = "1011"
+    char_qdone = "1100"
     
     #tape charaters
     char_X = "0000"
@@ -209,8 +210,8 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         current_state = char_q0
     elif(currentState == 'q1'):
         current_state = char_q1
-    elif(currentState == 'qdone'):
-        current_state = char_qdone
+    elif(currentState == 'q2'):
+        current_state = char_q2
     elif(currentState == 'q3'):
         current_state = char_q3
     elif(currentState == 'q4'):
@@ -227,6 +228,8 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         current_state = char_q9
     elif(currentState == 'q10'):
         current_state = char_q10
+    elif(currentState == 'qdone'):
+        current_state = char_qdone
     elif(currentState == 'None'):
         current_state = char_none
     else:
@@ -237,8 +240,8 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         next_state = char_q0
     elif(nextState == 'q1'):
         next_state = char_q1
-    elif(nextState == 'qdone'):
-        next_state = char_qdone
+    elif(nextState == 'q2'):
+        next_state = char_q2
     elif(nextState == 'q3'):
         next_state = char_q3
     elif(nextState == 'q4'):
@@ -257,6 +260,8 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         next_state = char_none
     elif(nextState == 'q10'):
         next_state = char_q10
+    elif(nextState == 'qdone'):
+        next_state = char_qdone
     else:
         next_state = char_error
     
