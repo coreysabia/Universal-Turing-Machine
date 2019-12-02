@@ -45,8 +45,7 @@ def render(position, step_number, current_state, tape, speed, dis_length, transi
     print()
     # Print step, postion, current state information
     print_info(position, step_number, current_state)
-    read_head = "idk"
-    print_encodings(position, tape, transitions, current_state, read_head)
+    print_encodings(position, tape, transitions, current_state)
     print()
     print()
     # Print dynamic tape
@@ -74,8 +73,7 @@ def render_final(position, step_number, current_state, tape, speed, dis_length, 
 
     # Print step, postion, current state information
     print_info_final(position, step_number, current_state)
-    read_head="idk"
-    print_encodings(position, tape, transitions, current_state, read_head)
+    print_encodings(position, tape, transitions, current_state)
     print()
     print()
 
@@ -126,13 +124,15 @@ def print_info_final(position, step_number, current_state):
     cprint(current_state_text, 110)
     cprint(tape_position_text, 110)
 
-def print_encodings(position, tape, transitions, current_state, read_head):
-    position = position - 1
+def print_encodings(position, tape, transitions, current_state):
+    tape = tape + [' ']
+    read_head = tape[position]
+
     if current_state != 'qdone':
         action = transitions[current_state][tape[position]]
         write_value = action['writeValue']
         next_state = action['nextState']
-        move_to = next_position(position, action['moveTo'])
+        move_to = action['moveTo']
     else:
         write_value = 'None'
         next_state = 'None'
