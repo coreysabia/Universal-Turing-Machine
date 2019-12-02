@@ -1,0 +1,9 @@
+//This is an example of a single stand alone transition
+
+"q1": {                     //Current State
+    "a": {                  //Whats under the read head
+      "writeValue": "a",    //What value to write
+      "nextState": "q2",    //Which State to move to
+      "moveTo": "left"      //Which direction to movve on the tape
+    }
+  }

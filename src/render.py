@@ -54,7 +54,7 @@ def render(position, step_number, current_state, tape, speed, dis_length, transi
     print()
 
     # Print counts of characters seen in tape
-    #print_counts(tape)
+    # print_counts(tape)
     # Pause for amount of seconds passed in by user
     time.sleep(speed)
 
