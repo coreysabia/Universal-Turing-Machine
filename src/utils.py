@@ -282,10 +282,12 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     
     
     #direction
-    if( moveTo == 'right'):
+    if(moveTo == 'right'):
         move = char_R
-    else:
+    elif(moveTo == 'left'):
         move = char_L
+    else:
+        move = char_space
 
     #(q1, a)-->(q2, b, L)
     #(current_state, read_head)-->(next_state, write, move)
