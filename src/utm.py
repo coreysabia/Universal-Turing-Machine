@@ -27,17 +27,18 @@ class TuringMachine(object):
         self.dis_length = int(rendered_tape_length)
         self.validate_transition(self.transitions, self.end_state)
 
+
     def run(self):
         
         #render_output
-        render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
+        render_init(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
         #Add to step_number of steps and move position
         while self.current_state != self.end_state:
             self.step_number += 1
             self.position = self.next_state(self.position)
-            render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
+            render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions)
         # render final position
-        render_final(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
+        render_final(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions)
 
         #return the string version of the tape
         return stringify(clean_list(self.tape))

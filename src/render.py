@@ -6,7 +6,7 @@ from neotermcolor import cprint
 from utils import *
 from utm import *
 
-def render(position, step_number, current_state, tape, speed, dis_length):
+def render_init(position, step_number, current_state, tape, speed, dis_length):
     # Clear screen to wipe previous state
     os_flag = os_check()
     if (os_flag == 'Windows'):
@@ -22,7 +22,33 @@ def render(position, step_number, current_state, tape, speed, dis_length):
     print_info(position, step_number, current_state)
     print()
     print()
-    
+    # Print dynamic tape
+    print_tape(empty, pad_end, pad_start, dis_length, vis_tape)
+    print()
+    # Print counts of characters seen in tape
+    #print_counts(tape)
+    # Pause for amount of seconds passed in by user
+    time.sleep(speed)
+
+
+def render(position, step_number, current_state, tape, speed, dis_length, transitions):
+    # Clear screen to wipe previous state
+    os_flag = os_check()
+    if (os_flag == 'Windows'):
+        print_system_cls()
+    else:
+        print_system_clear()
+
+    # Initialize dynamic padding variables
+    empty, pad_end, pad_start, dis_length, vis_tape = dynamic_padding(position, tape, dis_length)
+    print()
+    print()
+    # Print step, postion, current state information
+    print_info(position, step_number, current_state)
+    read_head = "idk"
+    print_encodings(position, tape, transitions, current_state, read_head)
+    print()
+    print()
     # Print dynamic tape
     print_tape(empty, pad_end, pad_start, dis_length, vis_tape)
     print()
@@ -32,7 +58,7 @@ def render(position, step_number, current_state, tape, speed, dis_length):
     # Pause for amount of seconds passed in by user
     time.sleep(speed)
 
-def render_final(position, step_number, current_state, tape, speed, dis_length):
+def render_final(position, step_number, current_state, tape, speed, dis_length, transitions):
     # Clear screen to wipe previous state
     os_flag = os_check()
     if (os_flag == 'Windows'):
@@ -48,13 +74,14 @@ def render_final(position, step_number, current_state, tape, speed, dis_length):
 
     # Print step, postion, current state information
     print_info_final(position, step_number, current_state)
+    read_head="idk"
+    print_encodings(position, tape, transitions, current_state, read_head)
     print()
     print()
 
     # Print dynamic tape
     print_tape(empty, pad_end, pad_start, dis_length, vis_tape)
     print()
-
 
 def dynamic_padding(position, tape, dis_length):
     # Get the length of the tape
@@ -98,6 +125,22 @@ def print_info_final(position, step_number, current_state):
     cprint(step_number_text, 110)
     cprint(current_state_text, 110)
     cprint(tape_position_text, 110)
+
+def print_encodings(position, tape, transitions, current_state, read_head):
+    position = position - 1
+    if current_state != 'qdone':
+        action = transitions[current_state][tape[position]]
+        write_value = action['writeValue']
+        next_state = action['nextState']
+        move_to = next_position(position, action['moveTo'])
+    else:
+        write_value = 'None'
+        next_state = 'None'
+        move_to = 'None'
+
+    encoded_transitions = transition_encode(write_value, next_state, move_to, current_state, read_head)
+    encoded_transitions_text = ' Encoded Transition: {} '.format(str(encoded_transitions).rjust(10))
+    cprint(encoded_transitions_text, 110)
 
 
     
