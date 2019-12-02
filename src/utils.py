@@ -165,6 +165,10 @@ def print_system_cls():
 # returns the encoding in the proper format (current state, readhead)-->(next state, write, move direction)
 def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     #pass in current transition from UTM run and return an int string of 0's and 1's
+    #Extra
+    char_none = "1111"
+    char_error = "XXXX"
+
     #states    
     char_q0 = "0000"
     char_q1 = "0001"
@@ -221,8 +225,12 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         current_state = char_q8
     elif(currentState == 'q9'):
         current_state = char_q9
-    else:
+    elif(currentState == 'q10'):
         current_state = char_q10
+    elif(currentState == 'None'):
+        current_state = char_none
+    else:
+        current_state = char_error
 
     #next state
     if(nextState == 'q0'):
@@ -245,8 +253,12 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         next_state = char_q8
     elif(nextState == 'q9'):
         next_state = char_q9
-    else:
+    elif(nextState == 'None'):
+        next_state = char_none
+    elif(nextState == 'q10'):
         next_state = char_q10
+    else:
+        next_state = char_error
     
     #readhead
     if(readHead == 'X'):
@@ -265,8 +277,12 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         read_head = char_left_bracket
     elif(readHead == ']'):
         read_head = char_right_bracket
-    else:
+    elif(readHead == ' '):
         read_head = char_space
+    elif(readHead == 'None'):
+        read_head = char_none
+    else:
+        read_head = char_error
 
 
 
@@ -277,15 +293,25 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         write = char_b
     elif(writeValue == 'c'):
         write = char_c
-    else:
+    elif(writeValue == 'None'):
+        write = char_none
+    elif(writeValue == ' '):
         write = char_space
+    else:
+        write = char_error
     
     
     #direction
-    if( moveTo == 'right'):
+    if(moveTo == 'right'):
         move = char_R
-    else:
+    elif(moveTo == 'left'):
         move = char_L
+    elif(moveTo == ' '):
+        move = char_space
+    elif(moveTo == 'None'):
+        move = char_none
+    else:
+        move = char_error
 
     #(q1, a)-->(q2, b, L)
     #(current_state, read_head)-->(next_state, write, move)
