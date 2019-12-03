@@ -128,15 +128,17 @@ def print_encodings(position, tape, transitions, current_state):
     tape = tape + [' ']
     read_head = tape[position]
 
-    if current_state != 'qdone':
-        action = transitions[current_state][tape[position]]
-        write_value = action['writeValue']
-        next_state = action['nextState']
-        move_to = action['moveTo']
-    else:
-        write_value = 'None'
-        next_state = 'None'
-        move_to = 'None'
+    #read in end state from user (DO THIS)
+    for i in range(len(tape[:-1])):
+        if current_state != 'qdone':
+            action = transitions[current_state][tape[position]]
+            write_value = action['writeValue']
+            next_state = action['nextState']
+            move_to = action['moveTo']
+        else:
+            write_value = 'None'
+            next_state = 'None'
+            move_to = 'None'
 
     encoded_transitions = transition_encode(write_value, next_state, move_to, current_state, read_head)
     encoded_transitions_text = ' Encoded Transition: {} '.format(str(encoded_transitions).rjust(10))

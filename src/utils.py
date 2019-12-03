@@ -168,6 +168,7 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     #Extra
     char_none = "1111"
     char_error = "XXXX"
+    char_delta = "1001"
 
     #states    
     char_q0 = "0000"
@@ -286,6 +287,8 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         read_head = char_space
     elif(readHead == 'None'):
         read_head = char_none
+    elif(readHead == 'Δ'):
+        read_head = char_delta
     else:
         read_head = char_error
 
@@ -302,6 +305,8 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         write = char_none
     elif(writeValue == ' '):
         write = char_space
+    elif(writeValue == 'Δ'):
+        write = char_delta
     else:
         write = char_error
     
