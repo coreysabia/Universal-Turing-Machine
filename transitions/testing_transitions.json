@@ -1,0 +1,104 @@
+{
+    "q1": {
+        "a": {
+            "writeValue": "Δ",
+            "moveTo": "right",
+            "nextState": "q3"
+        },
+        "b": {
+            "writeValue": "0",
+            "moveTo": "right",
+            "nextState": "q7"
+        },
+        "Δ": {
+            "writeValue": "1",
+            "moveTo": "right",
+            "nextState": "q2"
+        }
+    },
+    "q3": {
+        "a": {
+            "writeValue": "a",
+            "moveTo": "right",
+            "nextState": "q3"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "right",
+            "nextState": "q3"
+        },
+        "Δ": {
+            "writeValue": "Δ",
+            "moveTo": "right",
+            "nextState": "q4"
+        }
+    },
+    "q4": {
+        "a": {
+            "writeValue": "Δ",
+            "moveTo": "left",
+            "nextState": "q5"
+        },
+        "b": {
+            "writeValue": "Δ",
+            "moveTo": "left",
+            "nextState": "q6"
+        },
+        "Δ": {
+            "writeValue": "0",
+            "moveTo": "left",
+            "nextState": "q2"
+        }
+    },
+    "q5": {
+        "a": {
+            "writeValue": "Δ",
+            "moveTo": "left",
+            "nextState": "q5"
+        },
+        "b": {
+            "writeValue": "Δ",
+            "moveTo": "left",
+            "nextState": "q5"
+        },
+        "Δ": {
+            "writeValue": "0",
+            "moveTo": "left",
+            "nextState": "q2"
+        }
+    },
+    "q6": {
+        "a": {
+            "writeValue": "a",
+            "moveTo": "left",
+            "nextState": "q6"
+        },
+        "b": {
+            "writeValue": "b",
+            "moveTo": "left",
+            "nextState": "q6"
+        },
+        "Δ": {
+            "writeValue": "Δ",
+            "moveTo": "right",
+            "nextState": "q1"
+        }
+    },
+    "q7": {
+        "a": {
+            "writeValue": "Δ",
+            "moveTo": "right",
+            "nextState": "q7"
+        },
+        "b": {
+            "writeValue": "Δ",
+            "moveTo": "right",
+            "nextState": "q7"
+        },
+        "Δ": {
+            "writeValue": "Δ",
+            "moveTo": "right",
+            "nextState": "q2"
+        }
+    }
+}
