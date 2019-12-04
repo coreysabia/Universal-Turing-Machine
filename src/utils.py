@@ -35,15 +35,17 @@ def stringify(list):
     # Concatenate lists into string
     return str.join('', list)
 
-# 
 def tape_visualization(string):
     return ' '.join(string[i:i + 1] for i in range(0, len(string)))
 
 # removes spaces and blanks from list
 # will not clean unknown charaters from list
-def clean_list(list):
+def clean_list(list, end_char):
     # Remove empty characters from a list which 
     # might have empty characters and return it
+    #list = list((len(self.tape) + 1 ))
+    #while end_char in list:
+    #list.remove(end_char)
     while '' in list:
         list.remove('')
     while ' ' in list:
@@ -51,13 +53,13 @@ def clean_list(list):
     return list
 
 # returns the length of the given list
-def check_list_length(list):
+def check_list_length(list, end_char):
     #THIS needs to return the occurences of a specific character (for each character that is found)
     count = 0
     # Return the number of occurrences
     # in a list which has no empty characters
     # First clean list with remove_empty_character
-    clean = clean_list(list)
+    clean = clean_list(list, end_char)
     for clean in clean:
          count += 1
     return count
