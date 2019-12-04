@@ -23,7 +23,6 @@ def render_init(position, step_number, current_state, tape, speed, dis_length):
     print()
     print()
     # Print dynamic tape
-    print_tape(empty, pad_end, pad_start, dis_length, vis_tape)
     print()
     # Print counts of characters seen in tape
     #print_counts(tape)
@@ -31,7 +30,7 @@ def render_init(position, step_number, current_state, tape, speed, dis_length):
     time.sleep(speed)
 
 
-def render(position, step_number, current_state, tape, speed, dis_length, transitions):
+def render(position, step_number, current_state, tape, speed, dis_length, transitions, end_state, end_char):
     # Clear screen to wipe previous state
     os_flag = os_check()
     if (os_flag == 'Windows'):
@@ -45,7 +44,7 @@ def render(position, step_number, current_state, tape, speed, dis_length, transi
     print()
     # Print step, postion, current state information
     print_info(position, step_number, current_state)
-    print_encodings(position, tape, transitions, current_state)
+    print_encodings(position, tape, transitions, current_state, end_state, end_char)
     print()
     print()
     # Print dynamic tape
@@ -57,7 +56,7 @@ def render(position, step_number, current_state, tape, speed, dis_length, transi
     # Pause for amount of seconds passed in by user
     time.sleep(speed)
 
-def render_final(position, step_number, current_state, tape, speed, dis_length, transitions):
+def render_final(position, step_number, current_state, tape, speed, dis_length, transitions, end_state, end_char):
     # Clear screen to wipe previous state
     os_flag = os_check()
     if (os_flag == 'Windows'):
@@ -73,7 +72,7 @@ def render_final(position, step_number, current_state, tape, speed, dis_length, 
 
     # Print step, postion, current state information
     print_info_final(position, step_number, current_state)
-    print_encodings(position, tape, transitions, current_state)
+    print_encodings(position, tape, transitions, current_state, end_state, end_char)
     print()
     print()
 
@@ -124,28 +123,37 @@ def print_info_final(position, step_number, current_state):
     cprint(current_state_text, 110)
     cprint(tape_position_text, 110)
 
-def print_encodings(position, tape, transitions, current_state):
-    tape = tape + [' ']
+def print_encodings(position, tape, transitions, current_state, end_state, end_char):
+    #if at the begining of the tape, (position -1) then insert an empty character to signify that
+    if position == -1:
+            tape.insert(0, end_char) # INSERT EMPTY CHARACTER
+            position = 0
+
+    #if at the end of the tape, (position at length of tape) then append and empty character to signify that
+    if position == len(tape):
+        tape.append(end_char)
+
     read_head = tape[position]
 
+
     #read in end state from user (DO THIS)
-    for i in range(len(tape[:-1])):
-        if current_state != 'qdone':
-            action = transitions[current_state][tape[position]]
-            write_value = action['writeValue']
-            next_state = action['nextState']
-            move_to = action['moveTo']
-        else:
-            write_value = 'None'
-            next_state = 'None'
-            move_to = 'None'
+    if current_state != end_state:
+        action = transitions[current_state][tape[position]]
+        write_value = action['writeValue']
+        next_state = action['nextState']
+        move_to = action['moveTo']
+        encoded_transitions = transition_encode(write_value, next_state, move_to, current_state, read_head)
+        encoded_transitions_text = ' Encoded Transition: {} '.format(str(encoded_transitions).rjust(10))
+        cprint(encoded_transitions_text, 110)
+    else:
+        write_value = 'None'
+        next_state = 'None'
+        move_to = 'None'
+        encoded_transitions = transition_encode(write_value, next_state, move_to, current_state, read_head)
+        encoded_transitions_text = ' Final Encoded Transition: {} '.format(str(encoded_transitions).rjust(10))
+        cprint(encoded_transitions_text, 110)
 
-    encoded_transitions = transition_encode(write_value, next_state, move_to, current_state, read_head)
-    encoded_transitions_text = ' Encoded Transition: {} '.format(str(encoded_transitions).rjust(10))
-    cprint(encoded_transitions_text, 110)
 
-
-    
 def print_counts(tape):
     zero = '0'
     if zero in tape:

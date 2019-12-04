@@ -19,6 +19,7 @@ def main():
                             requested_args['input_tape'],
                             requested_args['start_state'],
                             requested_args['end_state'],
+                            requested_args['end_markings'],
                             requested_args['speed'],
                             requested_args['rendered_tape_length']).run()
     print()
