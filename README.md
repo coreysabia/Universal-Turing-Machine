@@ -22,8 +22,9 @@
 `python run.py`
 
 ### Docker:
-1. docker build -t utm . 
-2. docker run -it utm:latest sh 
+1. download docker at: https://www.docker.com/products/docker-desktop
+2. docker build -t utm . 
+3. docker run -it utm:latest sh 
 
 ## Example
 
