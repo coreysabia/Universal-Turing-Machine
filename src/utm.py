@@ -14,8 +14,9 @@ from utils import *
 class TuringMachine(object):
 
 
-    def __init__(self, transitions, input_tape, start_state, ending_state, speed, rendered_tape_length):
+    def __init__(self, transitions, input_tape, start_state, ending_state, end_markings, speed, rendered_tape_length):
         #initialize variables
+        self.end_char = end_markings
         self.transitions = transitions
         self.tape = list(input_tape)
         self.speed = float(speed)
@@ -31,27 +32,28 @@ class TuringMachine(object):
     def run(self):
         
         #render_output
-        render_init(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
+        #render_init(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length)
+        render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions, self.end_state, self.end_char)
         #Add to step_number of steps and move position
         while self.current_state != self.end_state:
             self.step_number += 1
             self.position = self.next_state(self.position)
-            render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions)
+            render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions, self.end_state, self.end_char)
         # render final position
-        render_final(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions)
-
+        render_final(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions, self.end_state, self.end_char)
+        
         #return the string version of the tape
-        return stringify(clean_list(self.tape))
+        return stringify(clean_list(self.tape, self.end_char))
 
     def next_state(self, position):
         #if at the begining of the tape, (position -1) then insert an empty character to signify that
         if position == -1:
-                self.tape.insert(0, empty_char()) # INSERT EMPTY CHARACTER
+                self.tape.insert(0, self.end_char) # INSERT END CHARACTER
                 position = 0
 
         #if at the end of the tape, (position at length of tape) then append and empty character to signify that
         if position == len(self.tape):
-            self.tape.append(empty_char())
+            self.tape.append(self.end_char)
 
         # set an object (action) to json object from transitions 
         action = self.transitions[self.current_state][self.tape[position]]
@@ -104,6 +106,14 @@ def request_user_input():
             'message':'Enter the final state (default: qdone):',
             'default': 'qdone',
             'validate': lambda answer: 'ERROR: You must input a final state!' \
+                if len(answer) == 0 else True
+        },
+        {
+            'type' : 'input',
+            'name' : 'end_markings',
+            'message':'Enter the character you want to use for end markings (default: "Δ"):',
+            'default': 'Δ',
+            'validate': lambda answer: 'ERROR: You must input an end marker!' \
                 if len(answer) == 0 else True
         },
         {
