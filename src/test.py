@@ -9,6 +9,7 @@ current_state = 'idk'
 tape = ["a","b","c","d"]
 speed = .03
 dis_length = 15
+end_char = " "
 
 a = ["a","b","c","d"]
 b = ["a","b","","c"]
@@ -30,16 +31,16 @@ print("\n")
 # clean list test
 print("*** clean test:")
 print()
-print(clean_list(b))
-print(clean_list(d))
-print(clean_list(e))
+print(clean_list(b, end_char))
+print(clean_list(d, end_char))
+print(clean_list(e, end_char))
 print("\n")
 
 # check list test
 print("*** checklist length test:")
 print()
-print(check_list_length(b))
-print(check_list_length(f))
+print(check_list_length(b, end_char))
+print(check_list_length(f, end_char))
 print("\n")
 
 # test for next position
