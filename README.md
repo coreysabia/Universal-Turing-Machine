@@ -28,7 +28,7 @@
 ## Example
 ### String
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-aaaaaaaaaaaaaaaaabbbbbbbb
+aaaaaabbbb
 
 ```json
 {
