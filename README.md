@@ -26,6 +26,9 @@
 2. docker run -it utm:latest sh 
 
 ## Example
+### String
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+aaaaaaaaaaaaaaaaabbbbbbbb
 
 ```json
 {
