@@ -27,7 +27,7 @@ print(transition_encode(writeValue, nextState, moveTo, currentState, readHead))
 
 
 #json_cleaner test
-print()
-print()
-print("***Json cleaner test***")
-json_cleaner("!", transitions)
+#print()
+#print()
+#print("***Json cleaner test***")
+#json_cleaner("!", transitions)
