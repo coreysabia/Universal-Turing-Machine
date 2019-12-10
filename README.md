@@ -26,7 +26,10 @@
 2. docker run -it utm:latest sh 
 
 ## Example
+transitions/testing_transitions.json
+
 ### String
+
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 aaaaaabbbb
 
