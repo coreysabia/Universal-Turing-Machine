@@ -4,15 +4,20 @@
 
 This README.md is currently intended for the instructor of the class that this was written for. The contents within this doccument and this GitHub Repo are not intended to be public, but will be pulic for the next few weeks to allow ease of grading and submission to the instructor of the contributors to this repo. If you are not the instructor, please ignore this repo.
 
+
 ## [Step 1] Initial Download(s)
 
 To run the program as intended you will need to follow the instructions listed just below this text. Please ensure that you have met all of the requirements in this first step before moving on.
 
-1. Clone this repository. It can be done in one of the following ways (2, 3, or 4): 
-2. If you already have Git installed you run the following command `git clone https://github.com/coreysabia/universal-turing-machine`. Next move on to 5.
-3. If you already have GitHub Desktop installed you can, on the GitHub website, navigate to the main page of the repository. Just above the folders and code (to the right), click the green button which says `Clone or Download` and the select `Open in Desktop` to clone the repository in GitHub Desktop. Follow the prompts in GitHub Desktop to complete the clone. Next move on to 5.
-4. Finally, you can install a .zip of the repository by following almost all the steps from the previous option. On the GitHub website, navigate to the main page of the repository. Just above the folders and code (to the right), click the green button which says `Clone or Download` and the select `Download Zip` to download the repository as a .zip file. OR click on this link to download the zip directly https://github.com/coreysabia/Universal-Turing-Machine/archive/develop.zip. If you followed this step, please take a minute to un-zip the repository. Next move on to 5.
-5. Download and Install Docker. Go to: https://hub.docker.com/?overlay=onboarding and login. Next download and install Docker on your local machine. Follow all prompts and ensure that virtulization is enabled on your machine (Docker will tell you if it is not when you try to run it).
+#### Clone this repository. It can be done in one of the following ways (1, 2, or 3): 
+1. If you already have Git installed you run the following command `git clone https://github.com/coreysabia/universal-turing-machine`.
+2. If you already have GitHub Desktop installed you can, on the GitHub website, navigate to the main page of the repository. Just above the folders and code (to the right), click the green button which says `Clone or Download` and the select `Open in Desktop` to clone the repository in GitHub Desktop. Follow the prompts in GitHub Desktop to complete the clone.
+3. Finally, you can install a .zip of the repository by following almost all the steps from the previous option. On the GitHub website, navigate to the main page of the repository. Just above the folders and code (to the right), click the green button which says `Clone or Download` and the select `Download Zip` to download the repository as a .zip file. OR click on this link to download the zip directly https://github.com/coreysabia/Universal-Turing-Machine/archive/develop.zip. If you followed this step, please take a minute to un-zip the repository.
+
+#### Download and Install Docker. 
+1. Go to: https://hub.docker.com/?overlay=onboarding and login. 
+2. Next download and install Docker on your local machine. Follow all prompts and ensure that virtulization is enabled on your machine (Docker will tell you if it is not when you try to run it).
+
 
 ## [Step 2] Translating the Transitions
 
@@ -28,8 +33,8 @@ If you have not already done so, or if you do not wish to use the transitions se
 2. The first nested field is the character under the read head
 3. The final nested fields are the value to write on the tape, the direction to move, and the state the machine needs to move to
 
-## [Step 3] Initial Setup
 
+## [Step 3] Initial Setup
 
 Now that you have downloaded and installed everything you need, and translated any transitions you wish to use it is time to make sure everything is setup and ready to go. Please ensure you have met all of the requirements of this third step before moving on.
 
@@ -52,6 +57,7 @@ Now that you have downloaded and installed everything you need, and translated a
 
 4. Now that you are in the root directory of the repository, please run `docker build -t utm .` in the CLI to build the Docker image. (NOTE: Please ensure that you include the `.` (period) character when running the command.)
 5. Once the Docker image has been built successfully (NOTE: this may take a few minutes the first time since it is gathering all the dependencies), you are able to now start the Docker container get a shell inside it. Do this by running `docker run -it utm:latest sh`. You should now see a `#` in your CLI indicating that you are now using the shell inside the running Docker container.
+
 
 ## [Step 4] Running the Universal Turing Machine (inside the Docker container)
 
