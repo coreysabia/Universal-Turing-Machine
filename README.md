@@ -8,19 +8,28 @@ This README.md is currently intended for the instructor of the class that this w
 
 To run the program as intended you will need to follow the instructions listed just below this text. Please ensure that you have met all of the requirements in this first step before moving on.
 
-1. Clone this repository. It can be done in one of the following ways: 
-  1. If you already have Git installed you run the following command `git clone https://github.com/coreysabia/universal-turing-machine`
-  2. If you already have GitHub Desktop installed you can, on the GitHub website, navigate to the main page of the repository. Just above the folders and code (to the right), click the green button which says `Clone or Download` and the select `Open in Desktop` to clone the repository in GitHub Desktop. Follow the prompts in GitHub Desktop to complete the clone.
-  3. Finally, you can install a .zip of the repository by following almost all the steps from the previous option. On the GitHub website, navigate to the main page of the repository. Just above the folders and code (to the right), click the green button which says `Clone or Download` and the select `Download Zip` to download the repository as a .zip file. OR click on this link to download the zip directly https://github.com/coreysabia/Universal-Turing-Machine/archive/develop.zip. If you followed this step, please take a minute to un-zip the repository.
+1. Clone this repository. It can be done in one of the following ways (A, B, or C): 
+  A. If you already have Git installed you run the following command `git clone https://github.com/coreysabia/universal-turing-machine`
+  B. If you already have GitHub Desktop installed you can, on the GitHub website, navigate to the main page of the repository. Just above the folders and code (to the right), click the green button which says `Clone or Download` and the select `Open in Desktop` to clone the repository in GitHub Desktop. Follow the prompts in GitHub Desktop to complete the clone.
+  C. Finally, you can install a .zip of the repository by following almost all the steps from the previous option. On the GitHub website, navigate to the main page of the repository. Just above the folders and code (to the right), click the green button which says `Clone or Download` and the select `Download Zip` to download the repository as a .zip file. OR click on this link to download the zip directly https://github.com/coreysabia/Universal-Turing-Machine/archive/develop.zip. If you followed this step, please take a minute to un-zip the repository.
 2. Download and Install Docker. Go to: https://hub.docker.com/?overlay=onboarding and login. Next download and install Docker on your local machine. Follow all prompts and ensure that virtulization is enabled on your machine (Docker will tell you if it is not when you try to run it).
 
 ## [Step 2] Translating the Transitions
 
 If you have not already done so, or if you do not wish to use the transitions set that you provided the class `NOTE: the testing transitions that you provided the class are already translated and can be either used for the UTM or used as and example of how to properly translate new transitions. They can be found in the transitions/testing_transitions.json file inside this repository` please follow the instructions just below to translate the transitions you wish to use into the required json format. Please ensure you have met all of the requirements of this second step before moving on.
 
-1. 
+1. Basic formatting of the json
+  A. The file needs to start with and open curly bracket "{", the file needs to close with a curly bracket "}"
+  B. the name of each field is formatted as follows "Name", this is followed by a colon ":", followed by the intended value for the field "Value". to finish the field, and signify to the parse that there will be another field end the line with a comma ",". For the last field in an object ignore the comma
+  C. the comma rule also applies to the nested objects, the last one doesnt have a comma at the end.
+
+2. Specifics for this json format
+  A. The first field in the json is the current state that the machine is in
+  B. The first nested field is the character under the read head
+  C. The final nested fields are the value to write on the tape, the direction to move, and the state the machine needs to move to
 
 ## [Step 3] Initial Setup
+
 
 Now that you have downloaded and installed everything you need, and translated any transitions you wish to use it is time to make sure everything is setup and ready to go. Please ensure you have met all of the requirements of this third step before moving on.
 
@@ -60,7 +69,9 @@ Now that you have completed all of the previous steps you are finally ready to r
 10. Have fun! Thank you for making it this far into the instructions for running the UTM. You should now know how to operate the UTM, feel free to try and break it, make new and interesting transitions, or just watch it work.
 
 
-### Examples and Explanation (Please only reference this if you need help understanding how to translate transitions.)
+
+
+### Example Transitions and Explanation (Please only reference this if you need help understanding how to translate transitions.)
 
 Assumptions in the following json formatted text: the initial state is q0 and final state is qdone (you can define these when running the program)
 
