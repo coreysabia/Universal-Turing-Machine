@@ -1,7 +1,7 @@
 {
     "q0": {
         "a": {
-            "writeValue": "Δ",
+            "writeValue": "!",
             "moveTo": "right",
             "nextState": "q1"
         },
@@ -10,7 +10,7 @@
             "moveTo": "right",
             "nextState": "q5"
         },
-        "Δ": {
+        "!": {
             "writeValue": "1",
             "moveTo": "right",
             "nextState": "qdone"
@@ -27,24 +27,24 @@
             "moveTo": "right",
             "nextState": "q1"
         },
-        "Δ": {
-            "writeValue": "Δ",
+        "!": {
+            "writeValue": "!",
             "moveTo": "left",
             "nextState": "q2"
         }
     },
     "q2": {
         "a": {
-            "writeValue": "Δ",
+            "writeValue": "!",
             "moveTo": "left",
             "nextState": "q3"
         },
         "b": {
-            "writeValue": "Δ",
+            "writeValue": "!",
             "moveTo": "left",
             "nextState": "q4"
         },
-        "Δ": {
+        "!": {
             "writeValue": "0",
             "moveTo": "left",
             "nextState": "qdone"
@@ -52,16 +52,16 @@
     },
     "q3": {
         "a": {
-            "writeValue": "Δ",
+            "writeValue": "!",
             "moveTo": "left",
             "nextState": "q3"
         },
         "b": {
-            "writeValue": "Δ",
+            "writeValue": "!",
             "moveTo": "left",
             "nextState": "q3"
         },
-        "Δ": {
+        "!": {
             "writeValue": "0",
             "moveTo": "left",
             "nextState": "qdone"
@@ -78,25 +78,25 @@
             "moveTo": "left",
             "nextState": "q4"
         },
-        "Δ": {
-            "writeValue": "Δ",
+        "!": {
+            "writeValue": "!",
             "moveTo": "right",
             "nextState": "q0"
         }
     },
     "q5": {
         "a": {
-            "writeValue": "Δ",
+            "writeValue": "!",
             "moveTo": "right",
             "nextState": "q5"
         },
         "b": {
-            "writeValue": "Δ",
+            "writeValue": "!",
             "moveTo": "right",
             "nextState": "q5"
         },
-        "Δ": {
-            "writeValue": "Δ",
+        "!": {
+            "writeValue": "!",
             "moveTo": "right",
             "nextState": "qdone"
         }

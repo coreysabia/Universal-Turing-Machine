@@ -189,6 +189,16 @@ def print_system_cls():
     #print cli cls for windows
     os.system('cls')
 
+#this function takes all of a specific character and converts it to a space
+#def json_cleaner(character, json):
+#    print(json)
+#    for character in json[character]:
+#        json[character] = " "
+    #for character in json["writeValue"]:
+        #character = " "
+#    print(json)
+#    return json
+
 # function that encodes a transition
 # links each part of the transition to a string of 0's and 1's
 # tests all parts of the transtion to assign it a common value

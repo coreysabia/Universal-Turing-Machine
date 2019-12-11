@@ -17,7 +17,7 @@ class TuringMachine(object):
     def __init__(self, transitions, input_tape, start_state, ending_state, end_markings, speed, rendered_tape_length):
         #initialize variables
         self.end_char = end_markings
-        self.transitions = transitions
+        self.transitions = json_cleaner(self.end_char, transitions)
         self.tape = list(input_tape)
         self.speed = float(speed)
         self.start_state = start_state
@@ -88,7 +88,7 @@ class TuringMachine(object):
             for case in transitions[transition]:
                 action = transitions[transition][case]
                 if len(action['writeValue']) != 1:
-                    raise Exception('Invalid config! Use ONE character, instead of "{}"!'.format(action['writeValue']))
+                    raise Exception('Invalid config! Use ONE character, instead of "{}"!'.format(action['writeValue']))  # returns error on windows machine but not mac????
                 if action['moveTo'] not in tape_movements():
                     raise Exception('Invalid config! Use "right" or "left", not "{}"!'.format(action['moveTo']))
                 if action['nextState'] not in transitions and action['nextState'] != end_state:
