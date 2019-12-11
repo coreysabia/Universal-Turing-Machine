@@ -28,31 +28,16 @@ Now that you have downloaded and installed everything you need, and translated a
 2. Open a Command Line Interface (CLI). Since you are using windows, CMD will work perfectly.
 3. On the CLI, navigate to the root directory of the repository that you either cloned or downloaded from GitHub using the `cd` and/or `dir` commands to navigate. Once you are in the root directory of the repository ensure that the file structure looks similar to the following:
 
-├───.github/
-│   └───workflows/
-│       └───config.yml
-├───src/
-│   ├───__init__.py
-│   ├───render.py
-│   ├───test.py
-│   ├───test2.py
-│   ├───utils.py
-│   └───utm.py
-├───transitions/
-│   ├───example_json_multiple.txt
-│   ├───example_json_single.txt
-│   ├───example_multi.json
-│   ├───example_palindrome.json
-│   ├───example_transitions.json
-│   ├───testing_transitions.json
-│   └───testing_transitions_copy.json
-├───.gitignore
-├───Dockerfile
-├───Pipfile
-├───Pipfile.lock
-├───README.md
-├───requirements.txt
-└───run.py
+├──.github/
+├──src/
+├──transitions/
+├──.gitignore
+├──Dockerfile
+├──Pipfile
+├──Pipfile.lock
+├──README.md
+├──requirements.txt
+└──run.py
 
 4. Now that you are in the root directory of the repository, please run `docker build -t utm .` in the CLI to build the Docker image. (NOTE: Please ensure that you include the `.` (period) character when running the command.)
 5. Once the Docker image has been built successfully (NOTE: this may take a few minutes the first time since it is gathering all the dependencies), you are able to now start the Docker container get a shell inside it. Do this by running `docker run -it utm:latest sh`. You should now see a `#` in your CLI indicating that you are now using the shell inside the running Docker container.
