@@ -18,7 +18,15 @@ To run the program as intended you will need to follow the instructions listed j
 
 If you have not already done so, or if you do not wish to use the transitions set that you provided the class `NOTE: the testing transitions that you provided the class are already translated and can be either used for the UTM or used as and example of how to properly translate new transitions. They can be found in the transitions/testing_transitions.json file inside this repository` please follow the instructions just below to translate the transitions you wish to use into the required json format. Please ensure you have met all of the requirements of this second step before moving on.
 
-1. 
+1. Basic formatting of the json
+  1. The file needs to start with  and open curly bracket "{", the file needs to close with a curly bracket "}"
+  2. the name of each field is formatted as follows "Name", this is followed by a colon ":", followed by the intended value for the field "Value". to finish the field, and signify to the parse that there will be another field end the line with a comma ",". For the last field in an object ignore the comma
+  3. the comma rule also applies to the nested objects, the last one doesnt have a comma at the end.
+
+2. Specifics for this json format
+  1. The first field in the json is the current state that the machine is in
+  2. The first nested field is the character under the read head
+  3. The final nested fields are the value to write on the tape, the direction to move, and the state the machine needs to move to
 
 ## [Step 3] Initial Setup
 
