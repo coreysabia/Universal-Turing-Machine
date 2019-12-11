@@ -115,7 +115,7 @@ def request_user_input():
             'type': 'input',
             'name': 'start_state',
             'message': 'Enter the start state (default: q0):',
-            'default': 'q1',
+            'default': 'q0',
             'validate': lambda answer: 'ERROR: You must input a starting state!' \
                 if len(answer) == 0 else True
         },
@@ -123,16 +123,15 @@ def request_user_input():
             'type' : 'input',
             'name' : 'end_state',
             'message':'Enter the final state (default: qdone):',
-            'default': 'q2',
+            'default': 'qdone',
             'validate': lambda answer: 'ERROR: You must input a final state!' \
                 if len(answer) == 0 else True
         },
         {
             'type' : 'input',
             'name' : 'end_markings',
-            'message':'Enter the character for end markings (default: " "):',
-            'default': 'Δ',
-            'validate': lambda answer: 'ERROR: You must input an end marker!' \
+            'message':'Enter the character for end markings/padding:',
+            'validate': lambda answer: 'ERROR: You must input an end marker! NOTE: It can be a " " (space)' \
                 if len(answer) == 0 else True
         },
         {
