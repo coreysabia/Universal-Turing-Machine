@@ -70,36 +70,12 @@ Now that you have completed all of the previous steps you are finally ready to r
 7. You should now see the prompt `? Enter the speed of the output (default: 0.03):  0.03`. Please enter the speed you wish for the rendering to be, the larger the integer that you provide, the slower it will run. The default input will provide a decent medium speed, not to slow not too fast (NOTE: Please ensure to first delete the default input if you are not using `0.03` before typing in a new value). 
 8. You should now see the prompt `? Enter how much of the tape you would like to see (default: 15):  15`. Please enter the amount of the tape you wish to see (number of characters left and right of the read head) while the tape is being rendered. Do not use a very large integer here, just one which will fit within the width of the CLI window that you are using. (NOTE: Please ensure to first delete the default input if you are not using `15` before typing in a new value). Now when you hit enter/return the UTM will run.
 9. You should now see the UTM running off of the input tape and transitions you provided it. If you do not see this, please ensure that you gave proper inputs for the previous requested inputs.
-10. Have fun! Thank you for making it this far into the instructions for running the UTM. 
-
-### If you do not already have a python enviroment installed, start here.
-1. Start by installing `Python 3.7`
-2. Make sure Python is in your PATH (if on windows)
-3. Update pip by running `python -m pip install --upgrade pip`.
-4. Install pipenv by running `pip install pipenv`
-5. Then follow list below.
-
-### To build the local python enviroment with pipenv, start here.
-1. Start by building pipenv files off of `requirements.txt` by running `pipenv update`.
-
-## Running the UTM (Then do this)
-1. Make sure you are in your local python enviroment by running `pipenv shell`.
-2. Then make sure you are in the main directory where the file `run.py` is.
-3. Finally, run one of the following commands, depending on what OS you are on.
-### For unix:
-`./run.py`
-### For windows:
-`python run.py`
-
-### Docker:
-1. docker build -t utm . 
-2. docker run -it utm:latest sh 
+10. Have fun! Thank you for making it this far into the instructions for running the UTM. You should now know how to operate the UTM, feel free to try and break it, make new and interesting transitions, or just watch it work.
 
 
+### Examples and Explanation (Please only reference this if you need help understanding how to translate transitions.)
 
-### Examples and Explanation
-
-Assumptions: Initial state is q0 and final state is qdone (you can define these when running the program)
+Assumptions in the following json formatted text: the initial state is q0 and final state is qdone (you can define these when running the program)
 
 ```json
 {
