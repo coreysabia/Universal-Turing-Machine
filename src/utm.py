@@ -27,6 +27,8 @@ class TuringMachine(object):
         self.position = 0
         self.dis_length = int(rendered_tape_length)
         self.validate_transition(self.transitions, self.end_state)
+        self.pos1 = 0
+        self.pos2 = 0
 
 
     def run(self):
@@ -41,27 +43,44 @@ class TuringMachine(object):
             render(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions, self.end_state, self.end_char)
         # render final position
         render_final(self.position, self.step_number, self.current_state, self.tape, self.speed, self.dis_length, self.transitions, self.end_state, self.end_char)
-        
         #return the string version of the tape
-        return stringify(clean_list(self.tape, self.end_char))
+        return stringify(clean_list(self.tape, self.end_char, self.pos1, self.pos2))
 
     def next_state(self, position):
         #if at the begining of the tape, (position -1) then insert an empty character to signify that
         if position == -1:
-                self.tape.insert(0, self.end_char) # INSERT END CHARACTER
-                position = 0
+            self.tape.insert(0, self.end_char) # INSERT END CHARACTER
+            position = 0
+            self.pos1 = 1
+            
 
         #if at the end of the tape, (position at length of tape) then append and empty character to signify that
         if position == len(self.tape):
             self.tape.append(self.end_char)
+            self.pos2 = 1
 
+        #read_head = self.tape[position]
+
+#position == len(self.tape) and 
+        #if read_head == self.end_char:
+        #    position = next_position(position, "left")
+        #    print("THIS DID A THING")
+        #    return position
+
+        #elif position == 0 and read_head == self.end_char:
+        #    position = next_position(position, "right")
+        #    print("THIS DID A THING TOO")
+        #    return position
+
+        #else:
+        #    print("THIS DIDNT DO A THING")
         # set an object (action) to json object from transitions 
         action = self.transitions[self.current_state][self.tape[position]]
         self.tape[position] = action['writeValue']
         self.current_state = action['nextState']
         position = next_position(position, action['moveTo'])
-
         return position
+
 
     @staticmethod
     def validate_transition(transitions, end_state):
@@ -111,9 +130,8 @@ def request_user_input():
         {
             'type' : 'input',
             'name' : 'end_markings',
-            'message':'Enter the character you want to use for end markings (default: "Δ"):',
-            'default': 'Δ',
-            'validate': lambda answer: 'ERROR: You must input an end marker!' \
+            'message':'Enter the character for end markings/padding:',
+            'validate': lambda answer: 'ERROR: You must input an end marker! NOTE: It can be a " " (space)' \
                 if len(answer) == 0 else True
         },
         {
