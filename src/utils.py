@@ -224,6 +224,8 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
     char_right_bracket = "0110"
     char_arrow = "0111"
     char_space = "1000"
+    char_zero = "1001"
+    char_one = "1010"
 
     #directions
     char_L = "0"
@@ -319,6 +321,10 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         read_head = char_none
     elif(readHead == 'Δ'):
         read_head = char_delta
+    elif(readHead == '0'):
+        read_head == char_zero
+    elif(readHead == '1'):
+        read_head = char_one 
     else:
         read_head = char_error
 
@@ -337,6 +343,10 @@ def transition_encode(writeValue, nextState, moveTo, currentState, readHead):
         write = char_space
     elif(writeValue == 'Δ'):
         write = char_delta
+    elif(writeValue == '0'):
+        write == char_zero
+    elif(writeValue == '1'):
+        write = char_one 
     else:
         write = char_error
     
