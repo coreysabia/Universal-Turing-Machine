@@ -40,16 +40,44 @@ def tape_visualization(string):
 
 # removes spaces and blanks from list
 # will not clean unknown charaters from list
-def clean_list(list, end_char):
+def clean_list(list, end_char, pos1, pos2):
     # Remove empty characters from a list which 
     # might have empty characters and return it
     #list = list((len(self.tape) + 1 ))
     #while end_char in list:
     #list.remove(end_char)
+    #list.pop()
+    #list.pop(0)
+    
     while '' in list:
         list.remove('')
     while ' ' in list:
         list.remove(' ')
+    while end_char in list:
+        list.remove(end_char)
+        
+    #list.pop() =
+    #ΔΔ0ΔΔΔΔΔ
+    #nothing =
+    #ΔΔ0ΔΔΔΔΔΔ
+    #list.pop(0) =
+    #Δ0ΔΔΔΔΔΔ
+
+    if pos1 == 1:
+        tape_minus_first = clean_first(list)
+        list = tape_minus_first
+    if pos2 == 1:
+        tape_minus_ends = clean_last(tape_minus_first)
+        list = tape_minus_ends
+
+    return list
+
+def clean_first(list):
+    list.pop(0)
+    return list
+
+def clean_last(list):
+    list.pop()
     return list
 
 # returns the length of the given list
